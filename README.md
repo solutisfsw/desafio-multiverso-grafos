@@ -17,9 +17,9 @@ Os universos e as rotas correspondem respectivamente aos vértices e arestas pon
 
 Seu código deverá resolver os seguintes problemas:
 
-* A distância entre A, B e C?
+* A distância de A a C passando por B?
 * A distância entre A e D?
-* A distância entre A, D e C?
+* A distância de A a C passando por D?
 * O número de rotas entre saindo C e voltando a C com no máximo 3 paradas?
 * O número de rotas entre A e C com no máximo 4 paradas?
 * A menor rota (em espaço-tempo) entre A e C?
