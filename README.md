@@ -12,37 +12,19 @@ O objetivo deste desafio é ajudar futuros viajantes a navegar entre os universo
 Seu software deverá ser capaz de calcular o custo de deslocamento entre rotas, os números diferentes de rotas entre universos e as rotas mais econômicas.
 
 
-
 ## REGRAS GERAIS
-Estamos interessados em ver como você utiliza suas habilidades e novas tecnologias para se apresentar para o mercado. Que jeito melhor do que fazer um software que fale por você? Queremos que você nos apresente um chatbot que responda algumas perguntas sobre seu perfil. Aqui vão as regras.
+Pedimos que você leia atentamente as instruções abaixo e crie uma solução de código usando Java, JavaScript, Ruby, ou Pyhton.
+
 - Faça a [cópia](https://help.github.com/articles/fork-a-repo/) do repositório (fork), desenvolva e submeta uma [solicitação de mudança](https://help.github.com/articles/creating-a-pull-request/) (pull request) no branch master.
 - Em caso de dúvidas basta abrir uma issue com sua pergunta (aqui mesmo no github) que nossa equipe irá respondê-lo assim que possível.
-- Caso ainda não tenha, crie uma conta gratuita na plataforma de nuvem da IBM (http://bluemix.com) e ative o serviço Watson Assistant.
-- Seu chatbot deve ser composto por configuração e contexto no Watson e uma interface que nos permita conversar com ele. 
-- Para a interface, podem ser utilizados pacotes prontos que podem ser facilmente encontrados na internet (inclusive no próprio site da IBM).
-- O contexto configurado no Watson (entidades, intenções e diálogos) também deve ser exportado e enviado junto com a interface.
-- Seu chatbot deve responder um conjunto mínimo de perguntas, mas não precisa parar por aí.
-- Nas instruções para execução da interface devem estar presentes as credenciais da API do Watson, além de seu nome e e-mail utilizados no cadastro Gupy
-
-
-### PLATAFORMA
-- IBM (Watson Assistant)
-
-
-### INTERFACE
-O canal utilizado como interface para o chatbot deve ser uma aplicação Web. Sugerimos as seguintes tecnologias:
-- Node
-- Angular
-- CSS
-
-
-### TESTES
-- Não se aplica.
+- Você não poderá usar bibliotecas externas ou ferramentas para propósito de criação.
+- Não será permitido o uso de bancos de dados orientedos a grafos.
+- Avaliaremos uma variedade de aspectos, como design da solução, orientação a objeto, complexidade do código e a existência de testes unitários.
+- Esperamos que você encaminhe um código que acredite ter qualidade, que possa ser executado e evoluído.
 
 ### BUILD E EXECUÇÃO
-- Envie as instruções para execução da interface e não esqueça das credenciais do Watson. Cuidado com dependências externas não mapeadas que inviabilizem ou dificultem essas atividades.
-- De preferência, utilize um ferramenta como npm ou yarn para realizar as tarefas necessárias de build.
-- Caso deseje, personalize a interface e mostre que tem criatividade (+)
+- Envie as instruções para execução do código
+- De preferência, utilize um ferramenta como gradle, maven, npm ou yarn para realizar as tarefas necessárias de build.
 
 
 # BOA SORTE!
