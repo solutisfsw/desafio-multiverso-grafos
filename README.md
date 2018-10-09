@@ -1,14 +1,17 @@
 [![N|Solid](http://solutis.com.br/images/logo.png)](http://solutis.com.br)
 
 # NOSSO DESAFIO
-“Cada cabeça um universo” de infinitas possibilidades. Imagine-se em um multiverso inóspito onde os maiores guerreiros estão congelados em cápsulas e poderão ser acionados para batalhas a qualquer momento. O próximo guerreiro a ser escolhido tem a missão de impedir um novo ataque utilizando seus conhecimentos em tecnologia. Nesse cenário, você é um guerreiro congelado e o chatbot deve fazer com que você seja escolhido para a missão. Para isso, seu chatbot deverá saber responder no mínimo as seguintes questões:
-- nome (ex: como se chama?, qual seu nome guerreiro?... )
-- idade/data de nascimento (ex: quantos anos você tem?, qual sua idade?...)
-- habilidades especiais: (ex: qual seu diferencial de batalha?, quais são suas habilidades especiais?...)
-- experiências em combate (ex: Quais batalhas participou?, quais lições aprendidas na batalha?..)
-- resumo (ex: qual o resumo do guerreiro?, fale sobre você?...)
+Na ficção científica, a viagem entre diferentes universos, é feita através de portais ou buracos de minhocas que conectam mundos diferentes ou até mesmo dimensões diferentes.
 
-Considere também que as características de seu personagem tenham alguma relação com você na vida real, assim a gente já lhe conhece melhor.
+Imagine que você é um físico renomado que descobriu “buracos de minhocas” (rotas) que permitem o deslocamento entre universos. De acordo com sua descoberta, 
+Todas as rotas são unidirecionais, ou seja, uma rota do universo A para o universo B não implica existência de uma rota do universo B para o universo A.
+ 
+Mesmo quando existam rotas nos dois sentidos, elas são distintas e não possuem necessariamente a mesma distância (medidas em unidades de espaço-tempo).
+
+O objetivo deste desafio é ajudar futuros viajantes a navegar entre os universos gastando a menor quantidade de espaço-tempo possível. 
+Seu software deverá ser capaz de calcular o custo de deslocamento entre rotas, os números diferentes de rotas entre universos e as rotas mais econômicas.
+
+
 
 ## REGRAS GERAIS
 Estamos interessados em ver como você utiliza suas habilidades e novas tecnologias para se apresentar para o mercado. Que jeito melhor do que fazer um software que fale por você? Queremos que você nos apresente um chatbot que responda algumas perguntas sobre seu perfil. Aqui vão as regras.
