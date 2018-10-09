@@ -20,11 +20,11 @@ Seu código deverá resolver os seguintes problemas:
 * A distância de A a C passando por B?
 * A distância entre A e D?
 * A distância de A a C passando por D?
-* O número de rotas entre saindo C e voltando a C com no máximo 3 paradas?
+* O número de rotas saindo C e voltando a C com no máximo 3 paradas?
 * O número de rotas entre A e C com no máximo 4 paradas?
 * A menor rota (em espaço-tempo) entre A e C?
-* A menor rota (em espaço-tempo) entre saindo de B e e voltando a B?
-* O número de diferentes rotas entre  saindo de C e voltando a C com distância máxima de 300 unidades de espaço-tempo?
+* A menor rota (em espaço-tempo) saindo de B e e voltando a B?
+* O número de diferentes rotas saindo de C e voltando a C com distância máxima de 300 unidades de espaço-tempo?
 
 A forma de entrada e saída dos dados fica a sua escolha.
 
