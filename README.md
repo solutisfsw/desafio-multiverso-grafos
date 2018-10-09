@@ -11,7 +11,7 @@ Mesmo quando existam rotas nos dois sentidos, elas são distintas e não possuem
 O objetivo deste desafio é ajudar futuros viajantes a navegar entre os universos gastando a menor quantidade de espaço-tempo possível. 
 Seu software deverá ser capaz de calcular o custo de deslocamento entre rotas, os números diferentes de rotas entre universos e as rotas mais econômicas.
 
-Os universos e as rotas corresponde respectivamente aos vértices e arestas ponderadas do grafo abaixo:
+Os universos e as rotas correspondem respectivamente aos vértices e arestas ponderadas do grafo abaixo:
 
 [![N|Solid](https://github.com/solutisfsw/desafio-multiverso-grafos/raw/master/grafo.png)](Grafo)
 
