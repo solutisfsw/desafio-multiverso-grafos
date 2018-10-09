@@ -15,6 +15,19 @@ Os universos e as rotas correspondem respectivamente aos vértices e arestas pon
 
 [![N|Solid](https://github.com/solutisfsw/desafio-multiverso-grafos/raw/master/grafo.png)](Grafo)
 
+Seu código deverá resolver os seguintes problemas:
+
+1 – A distância entre A, B e C?
+2 – A distância entre A e D?
+3 – A distância entre A, D e C?
+4 – O número de rotas entre C e C com no máximo 3 paradas?
+5 – O número de rotas entre A e C com no máximo 4 paradas?
+6 – A menor rota (em espaço-tempo) entre A e C?
+7 – A menor rota (em espaço-tempo) entre B e B?
+8 – O número de diferentes rotas entre C e C distância máxima de 300 unidades de espaço-tempo?
+
+A forma de entrada e saída dos dados fica a sua escolha.
+
 ## REGRAS GERAIS
 Pedimos que você leia atentamente as instruções abaixo e crie uma solução de código usando Java, JavaScript, Ruby, ou Pyhton.
 
