@@ -33,7 +33,7 @@ Pedimos que você leia atentamente as instruções abaixo e crie uma solução d
 
 - Faça a [cópia](https://help.github.com/articles/fork-a-repo/) do repositório (fork), desenvolva e submeta uma [solicitação de mudança](https://help.github.com/articles/creating-a-pull-request/) (pull request) no branch master.
 - Em caso de dúvidas basta abrir uma issue com sua pergunta (aqui mesmo no github) que nossa equipe irá respondê-lo assim que possível.
-- Você não poderá usar bibliotecas externas ou ferramentas resolver o problema das rotas.
+- Você não poderá usar bibliotecas externas ou ferramentas resolver o problema das rotas/grafo.
 - Não será permitido o uso de bancos de dados orientedos a grafos.
 - Avaliaremos uma variedade de aspectos, como design da solução, orientação a objeto, complexidade do código e a existência de testes unitários.
 - Esperamos que você encaminhe um código que acredite ter qualidade, que possa ser executado e evoluído.
