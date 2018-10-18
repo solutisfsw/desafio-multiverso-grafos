@@ -41,8 +41,8 @@ public class Caminho {
 		this.caminhoValido = caminhoValido;
 	}
 	
-	public int somaTotalEP(int espacoTempo) {
-		return getTotalEspacoTempo() + espacoTempo;
+	public void somaTotalEP(int espacoTempo) {
+		setTotalEspacoTempo(getTotalEspacoTempo() + espacoTempo);
 	}
 	
 	
