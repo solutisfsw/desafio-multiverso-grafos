@@ -3,7 +3,7 @@ package com.adailton.multiverso.entity;
 public class Aresta {
 	private int espaco_tempo;
 	private UniversoVertice destino;
-	private int visitado = 0;
+	private boolean visitado = false;
 	
 	
 	
@@ -24,10 +24,10 @@ public class Aresta {
 	public void setDestino(UniversoVertice destino) {
 		this.destino = destino;
 	}
-	public int getVisitado() {
+	public boolean getVisitado() {
 		return visitado;
 	}
-	public void setVisitado(int visitado) {
+	public void setVisitado(boolean visitado) {
 		this.visitado = visitado;
 	}
 	

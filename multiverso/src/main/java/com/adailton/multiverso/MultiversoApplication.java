@@ -6,6 +6,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.adailton.multiverso.entity.Aresta;
+import com.adailton.multiverso.entity.CalculosMultiverso;
+import com.adailton.multiverso.entity.Caminho;
 import com.adailton.multiverso.entity.UniversoVertice;
 
 @SpringBootApplication
@@ -34,8 +36,16 @@ public class MultiversoApplication {
 								new Aresta(80, e)));
 		e.setRotas(Arrays.asList(new Aresta(30, b)));
 		
+		CalculosMultiverso calculo = new CalculosMultiverso();
+		Caminho cam = calculo.calculaDistancia(a, b);
 		
 		
+		System.out.println("qtd de paradas: "+ cam.getQtdParada() +
+							" , Total da distancia: " + cam.getTotalEspacoTempo());
+		
+		for(int i=0; i<cam.getLetrasDoCaminho().size();i++) {
+			System.out.println(cam.getLetrasDoCaminho().get(i));	
+		}
 				
 	}
 }
