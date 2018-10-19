@@ -5,11 +5,15 @@ import java.util.List;
 
 public class UniversoVertice {
 	private String nome;
-	private List<Aresta> rotas = new ArrayList<>();
+	private List<Aresta> rotas = new ArrayList<>();//apontando para as vertices
 	
 	
 	
 	
+	public UniversoVertice() {
+		super();
+	}
+
 	public UniversoVertice(String nome) {
 		super();
 		this.nome = nome;

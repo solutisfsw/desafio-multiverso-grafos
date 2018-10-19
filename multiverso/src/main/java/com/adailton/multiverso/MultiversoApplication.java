@@ -1,6 +1,8 @@
 package com.adailton.multiverso;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -37,15 +39,17 @@ public class MultiversoApplication {
 		e.setRotas(Arrays.asList(new Aresta(30, b)));
 		
 		CalculosMultiverso calculo = new CalculosMultiverso();
-		Caminho cam = calculo.calculaDistancia(a, b);
-		
-		
-		System.out.println("qtd de paradas: "+ cam.getQtdParada() +
-							" , Total da distancia: " + cam.getTotalEspacoTempo());
-		
-		for(int i=0; i<cam.getLetrasDoCaminho().size();i++) {
-			System.out.println(cam.getLetrasDoCaminho().get(i));	
+		List<Caminho> cam = new ArrayList<>();
+		calculo.calculaCaminho(a, c, cam);
+		System.out.println("total de caminhos possiveis: " + cam.size());
+		System.out.println("\n");
+		for(int i=0; i<cam.size();i++) {
+			for(i=0; i<cam.size();i++) {
+				System.out.println("qtd de paradas: "+ cam.get(i).getQtdParada());
+				System.out.println("qtd total do percurso: " + cam.get(i).getTotalEspacoTempo());
+				System.out.println(cam.get(i).getLetrasDoCaminho());
+				System.out.println("*************************");
+			}
 		}
-				
 	}
 }

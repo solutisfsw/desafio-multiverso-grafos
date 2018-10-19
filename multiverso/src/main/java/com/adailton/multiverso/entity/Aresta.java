@@ -2,7 +2,7 @@ package com.adailton.multiverso.entity;
 
 public class Aresta {
 	private int espaco_tempo;
-	private UniversoVertice destino;
+	private UniversoVertice destino;// vertices para onde pode ir
 	private boolean visitado = false;
 	
 	

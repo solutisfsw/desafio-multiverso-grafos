@@ -7,7 +7,7 @@ import java.util.List;
 public class Caminho {
 
 	private List<String> letrasDoCaminho = new ArrayList<>();
-	private int qtdParada  = letrasDoCaminho.size()+1;
+	private int qtdParada  ;
 	private int totalEspacoTempo=0;
 	private boolean caminhoValido = false;
 	
@@ -26,7 +26,7 @@ public class Caminho {
 		return qtdParada;
 	}
 	public void setQtdParada(int qtdParada) {
-		this.qtdParada = qtdParada;// qtdParada vai ser sempre o tamanho da lista de LetrasdoCaminho
+		this.qtdParada = getLetrasDoCaminho().size();// qtdParada vai ser sempre o tamanho da lista de LetrasdoCaminho
 	}
 	public int getTotalEspacoTempo() {
 		return totalEspacoTempo;
@@ -41,7 +41,7 @@ public class Caminho {
 		this.caminhoValido = caminhoValido;
 	}
 	
-	public void somaTotalEP(int espacoTempo) {
+	public void somaTotalEP(int espacoTempo) {//para contabilizar a distancia total
 		setTotalEspacoTempo(getTotalEspacoTempo() + espacoTempo);
 	}
 	
