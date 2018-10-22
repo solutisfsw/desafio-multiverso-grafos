@@ -31,8 +31,8 @@ public class MultiversoApplication {
 		
 		b.setRotas(Arrays.asList(new Aresta(40, c)));
 		
-		c.setRotas(Arrays.asList(new Aresta(20, e),
-								new Aresta(40, d)));
+		c.setRotas(Arrays.asList(new Aresta(40, d),
+								new Aresta(20, e)));
 		
 		d.setRotas(Arrays.asList(new Aresta(40, c),
 								new Aresta(80, e)));
@@ -42,7 +42,8 @@ public class MultiversoApplication {
 		CalculosMultiverso calculo = new CalculosMultiverso();
 		List<Caminho> cam = new ArrayList<>();
 		
-		calculo.calculaCaminho(a, c , cam);
+		calculo.calculaCaminho(b, b, cam);//entradas de testes
+		
 		System.out.println("total de caminhos possiveis: " + cam.size());
 		System.out.println("\n");
 		for(int i=0; i<cam.size();i++) {
