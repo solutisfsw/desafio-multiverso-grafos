@@ -6,12 +6,18 @@ import java.util.List;
 public class CalculosMultiverso {
 	private List<Caminho> listaCaminho = new ArrayList<>();
 	
+	public void calculaCaminhoPrincipal(UniversoVertice verticeOrigem, UniversoVertice verticeDestino,List<Caminho> listaCaminho) {
+		if(verticeDestino.getNome().equalsIgnoreCase("b")) {
+			calculaCaminhoBB(verticeOrigem, verticeDestino, listaCaminho);
+		}else {
+			calculaCaminhoNormal(verticeOrigem, verticeDestino, listaCaminho);
+		}
+	}
 	
 	
-	
-	public void calculaCaminho(UniversoVertice verticeOrigem, UniversoVertice verticeDestino,List<Caminho> listaCaminho) {
+	public void calculaCaminhoNormal(UniversoVertice verticeOrigem, UniversoVertice verticeDestino,List<Caminho> listaCaminho) {
 		
-			int menorCaminho = 0;
+			
 			for(Aresta v:verticeOrigem.getRotas()) {
 				Caminho cam = new Caminho() ;//por conta disso não consegui fazer recursividade
 				if(!cam.isCaminhoValido()) {
@@ -27,21 +33,20 @@ public class CalculosMultiverso {
 						UniversoVertice verticeAuxiliar = v.getDestino();
 						
 						for(Aresta v2:verticeAuxiliar.getRotas()) {//segundo nó
-							if(!cam.isCaminhoValido() && v2.getespaco_tempo()==20) {
+							if(!cam.isCaminhoValido() || v2.getespaco_tempo()==20) {
 								if(v2.getDestino().getNome().equals(verticeDestino.getNome())) {
 									cam.setCaminhoValido(true);
 									cam.somaTotalEP(v2.getespaco_tempo());
 									cam.setletrasDoCaminho(v2.getDestino().getNome());
 									cam.setQtdParada(cam.getLetrasDoCaminho().size());
 									listaCaminho.add(cam);
-									//cam = new Caminho();
 								}else {
 									cam.somaTotalEP(v2.getespaco_tempo());
 									cam.setletrasDoCaminho(v2.getDestino().getNome());
 									UniversoVertice verticeAuxiliar3 = v2.getDestino();
 									
 									for(Aresta v3:verticeAuxiliar3.getRotas()) {//terceiro nó
-										if(/*cam.getQtdParada() == 3 ||*/ !cam.isCaminhoValido()) {
+										if(!cam.isCaminhoValido()) {
 											if(v3.getDestino().getNome().equals(verticeDestino.getNome())) {
 												cam.setCaminhoValido(true);
 												cam.somaTotalEP(v3.getespaco_tempo());
@@ -74,10 +79,7 @@ public class CalculosMultiverso {
 																		cam.setletrasDoCaminho(v5.getDestino().getNome());
 																		cam.setQtdParada(cam.getLetrasDoCaminho().size());
 																		listaCaminho.add(cam);
-																	}/*else {
-																		cam.somaTotalEP(v4.getespaco_tempo());
-																		cam.setletrasDoCaminho(v4.getDestino().getNome());
-																	}*/
+																	}
 																}
 															}						
 														}
@@ -93,5 +95,73 @@ public class CalculosMultiverso {
 				}
 			}
 		}
+	
+	public void calculaCaminhoBB(UniversoVertice verticeOrigem, UniversoVertice verticeDestino,List<Caminho> listaCaminho) {
+		
+		
+		for(Aresta v:verticeOrigem.getRotas()) {
+			Caminho cam = new Caminho() ;//por conta disso não consegui fazer recursividade
+			if(!cam.isCaminhoValido()) {
+				if(v.getDestino().getNome().equals(verticeDestino.getNome())) {
+					cam.setCaminhoValido(true);
+					cam.somaTotalEP(v.getespaco_tempo());
+					cam.setletrasDoCaminho(v.getDestino().getNome());
+					cam.setQtdParada(cam.getLetrasDoCaminho().size());
+					listaCaminho.add(cam);				
+				}else {
+					cam.somaTotalEP(v.getespaco_tempo());
+					cam.setletrasDoCaminho(v.getDestino().getNome());
+					UniversoVertice verticeAuxiliar = v.getDestino();
+					
+					for(Aresta v2:verticeAuxiliar.getRotas()) {//segundo nó
+						if(!cam.isCaminhoValido() && v2.getespaco_tempo()==20) {
+							if(v2.getDestino().getNome().equals(verticeDestino.getNome())) {
+								cam.setCaminhoValido(true);
+								cam.somaTotalEP(v2.getespaco_tempo());
+								cam.setletrasDoCaminho(v2.getDestino().getNome());
+								cam.setQtdParada(cam.getLetrasDoCaminho().size());
+								listaCaminho.add(cam);
+							}else {
+								cam.somaTotalEP(v2.getespaco_tempo());
+								cam.setletrasDoCaminho(v2.getDestino().getNome());
+								UniversoVertice verticeAuxiliar3 = v2.getDestino();
+								
+								for(Aresta v3:verticeAuxiliar3.getRotas()) {//terceiro nó
+									if(!cam.isCaminhoValido()) {
+										if(v3.getDestino().getNome().equals(verticeDestino.getNome())) {
+											cam.setCaminhoValido(true);
+											cam.somaTotalEP(v3.getespaco_tempo());
+											cam.setletrasDoCaminho(v3.getDestino().getNome());
+											cam.setQtdParada(cam.getLetrasDoCaminho().size());
+											listaCaminho.add(cam);													
+										}else {
+											cam.somaTotalEP(v3.getespaco_tempo());
+											cam.setletrasDoCaminho(v3.getDestino().getNome());
+											UniversoVertice verticeAuxiliar4 = v3.getDestino();
+											
+											for(Aresta v4:verticeAuxiliar4.getRotas()) {
+												if(!cam.isCaminhoValido()) {
+													if(v4.getDestino().getNome().equals(verticeDestino.getNome())) {
+														cam.setCaminhoValido(true);
+														cam.somaTotalEP(v4.getespaco_tempo());
+														cam.setletrasDoCaminho(v4.getDestino().getNome());
+														cam.setQtdParada(cam.getLetrasDoCaminho().size());
+														listaCaminho.add(cam);															
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}	
+					}		
+				}
+			}
+		}
 	}
+
+	}
+		
+	
 

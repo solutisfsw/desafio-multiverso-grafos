@@ -18,7 +18,7 @@ public class MultiversoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MultiversoApplication.class, args);
 		
-		/*UniversoVertice a = new UniversoVertice("a");
+		UniversoVertice a = new UniversoVertice("a");
 		UniversoVertice b = new UniversoVertice("b");
 		UniversoVertice c = new UniversoVertice("c");
 		UniversoVertice d = new UniversoVertice("d");
@@ -42,7 +42,7 @@ public class MultiversoApplication {
 		CalculosMultiverso calculo = new CalculosMultiverso();
 		List<Caminho> cam = new ArrayList<>();
 		
-		calculo.calculaCaminho(b, b, cam);//entradas de testes
+		calculo.calculaCaminhoPrincipal(c, c, cam);//entradas de testes
 		
 		System.out.println("total de caminhos possiveis: " + cam.size());
 		System.out.println("\n");
@@ -53,6 +53,6 @@ public class MultiversoApplication {
 				System.out.println(cam.get(i).getLetrasDoCaminho());
 				System.out.println("*************************");
 			}
-		}*/
+		}
 	}
 }
