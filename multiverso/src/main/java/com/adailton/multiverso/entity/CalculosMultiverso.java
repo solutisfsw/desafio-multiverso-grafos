@@ -15,8 +15,7 @@ public class CalculosMultiverso {
 	}
 	
 	
-	public void calculaCaminhoNormal(UniversoVertice verticeOrigem, UniversoVertice verticeDestino,List<Caminho> listaCaminho) {
-		
+	public void calculaCaminhoNormal(UniversoVertice verticeOrigem, UniversoVertice verticeDestino,List<Caminho> listaCaminho) {			
 			
 			for(Aresta v:verticeOrigem.getRotas()) {
 				Caminho cam = new Caminho() ;//por conta disso não consegui fazer recursividade
@@ -26,20 +25,22 @@ public class CalculosMultiverso {
 						cam.somaTotalEP(v.getespaco_tempo());
 						cam.setletrasDoCaminho(v.getDestino().getNome());
 						cam.setQtdParada(cam.getLetrasDoCaminho().size());
-						listaCaminho.add(cam);				
+						listaCaminho.add(cam);	
+						
 					}else {
 						cam.somaTotalEP(v.getespaco_tempo());
 						cam.setletrasDoCaminho(v.getDestino().getNome());
 						UniversoVertice verticeAuxiliar = v.getDestino();
 						
 						for(Aresta v2:verticeAuxiliar.getRotas()) {//segundo nó
-							if(!cam.isCaminhoValido() || v2.getespaco_tempo()==20) {
+							if(!cam.isCaminhoValido()) {
 								if(v2.getDestino().getNome().equals(verticeDestino.getNome())) {
 									cam.setCaminhoValido(true);
 									cam.somaTotalEP(v2.getespaco_tempo());
 									cam.setletrasDoCaminho(v2.getDestino().getNome());
 									cam.setQtdParada(cam.getLetrasDoCaminho().size());
 									listaCaminho.add(cam);
+									
 								}else {
 									cam.somaTotalEP(v2.getespaco_tempo());
 									cam.setletrasDoCaminho(v2.getDestino().getNome());
@@ -52,7 +53,8 @@ public class CalculosMultiverso {
 												cam.somaTotalEP(v3.getespaco_tempo());
 												cam.setletrasDoCaminho(v3.getDestino().getNome());
 												cam.setQtdParada(cam.getLetrasDoCaminho().size());
-												listaCaminho.add(cam);													
+												listaCaminho.add(cam);	
+												
 											}else {
 												cam.somaTotalEP(v3.getespaco_tempo());
 												cam.setletrasDoCaminho(v3.getDestino().getNome());
@@ -65,7 +67,8 @@ public class CalculosMultiverso {
 															cam.somaTotalEP(v4.getespaco_tempo());
 															cam.setletrasDoCaminho(v4.getDestino().getNome());
 															cam.setQtdParada(cam.getLetrasDoCaminho().size());
-															listaCaminho.add(cam);															
+															listaCaminho.add(cam);	
+															
 														}else {
 															cam.somaTotalEP(v4.getespaco_tempo());
 															cam.setletrasDoCaminho(v4.getDestino().getNome());
@@ -159,9 +162,8 @@ public class CalculosMultiverso {
 				}
 			}
 		}
-	}
-
-	}
+	}	
+}
 		
 	
 

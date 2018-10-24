@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.adailton.multiverso.entity.Aresta;
 import com.adailton.multiverso.entity.CalculosMultiverso;
 import com.adailton.multiverso.entity.Caminho;
+import com.adailton.multiverso.entity.ListaDeVertice;
 import com.adailton.multiverso.entity.UniversoVertice;
 
 @SpringBootApplication
@@ -18,31 +19,21 @@ public class MultiversoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MultiversoApplication.class, args);
 		
-		UniversoVertice a = new UniversoVertice("a");
-		UniversoVertice b = new UniversoVertice("b");
-		UniversoVertice c = new UniversoVertice("c");
-		UniversoVertice d = new UniversoVertice("d");
-		UniversoVertice e = new UniversoVertice("e");
+
+		ListaDeVertice lista = new ListaDeVertice();
+		lista.iniciaVertices();
+		lista.iniciaListaVertice();
 		
-		//adicionando as Arestas para cada classe
-		a.setRotas(Arrays.asList(new Aresta(70, e),
-								new Aresta(50, b),
-								new Aresta(50, d) ));
+		String b1= "a";
+		String b2= "c";
 		
-		b.setRotas(Arrays.asList(new Aresta(40, c)));
-		
-		c.setRotas(Arrays.asList(new Aresta(40, d),
-								new Aresta(20, e)));
-		
-		d.setRotas(Arrays.asList(new Aresta(40, c),
-								new Aresta(80, e)));
-		
-		e.setRotas(Arrays.asList(new Aresta(30, b)));
+		UniversoVertice origem = lista.convertStringVertice(b1);
+		UniversoVertice destino = lista.convertStringVertice(b2);
 		
 		CalculosMultiverso calculo = new CalculosMultiverso();
 		List<Caminho> cam = new ArrayList<>();
 		
-		calculo.calculaCaminhoPrincipal(c, c, cam);//entradas de testes
+		calculo.calculaCaminhoPrincipal(origem, destino, cam);//entradas de testes
 		
 		System.out.println("total de caminhos possiveis: " + cam.size());
 		System.out.println("\n");
