@@ -46,7 +46,7 @@ public class ListaDeVertice {
 
 	}
 			
-	public UniversoVertice convertStringVertice(String stringEntrada) {
+	public UniversoVertice convertStringVertice(String stringEntrada) {//procura a vertice que tem o mesmo nome da letra
 		
 		for(UniversoVertice v:getListaVertice()) {
 			if(v.getNome().equalsIgnoreCase(stringEntrada)) {

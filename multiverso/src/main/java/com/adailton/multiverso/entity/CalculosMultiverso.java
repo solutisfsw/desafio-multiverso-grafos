@@ -20,7 +20,7 @@ public class CalculosMultiverso {
 			for(Aresta v:verticeOrigem.getRotas()) {
 				Caminho cam = new Caminho() ;//por conta disso não consegui fazer recursividade
 				if(!cam.isCaminhoValido()) {
-					if(v.getDestino().getNome().equals(verticeDestino.getNome())) {
+					if(v.getDestino().getNome().equalsIgnoreCase(verticeDestino.getNome())) {
 						cam.setCaminhoValido(true);
 						cam.somaTotalEP(v.getespaco_tempo());
 						cam.setletrasDoCaminho(v.getDestino().getNome());
@@ -34,7 +34,7 @@ public class CalculosMultiverso {
 						
 						for(Aresta v2:verticeAuxiliar.getRotas()) {//segundo nó
 							if(!cam.isCaminhoValido()) {
-								if(v2.getDestino().getNome().equals(verticeDestino.getNome())) {
+								if(v2.getDestino().getNome().equalsIgnoreCase(verticeDestino.getNome())) {
 									cam.setCaminhoValido(true);
 									cam.somaTotalEP(v2.getespaco_tempo());
 									cam.setletrasDoCaminho(v2.getDestino().getNome());
@@ -48,7 +48,7 @@ public class CalculosMultiverso {
 									
 									for(Aresta v3:verticeAuxiliar3.getRotas()) {//terceiro nó
 										if(!cam.isCaminhoValido()) {
-											if(v3.getDestino().getNome().equals(verticeDestino.getNome())) {
+											if(v3.getDestino().getNome().equalsIgnoreCase(verticeDestino.getNome())) {
 												cam.setCaminhoValido(true);
 												cam.somaTotalEP(v3.getespaco_tempo());
 												cam.setletrasDoCaminho(v3.getDestino().getNome());
@@ -62,7 +62,7 @@ public class CalculosMultiverso {
 												
 												for(Aresta v4:verticeAuxiliar4.getRotas()) {
 													if(!cam.isCaminhoValido()) {
-														if(v4.getDestino().getNome().equals(verticeDestino.getNome())) {
+														if(v4.getDestino().getNome().equalsIgnoreCase(verticeDestino.getNome())) {
 															cam.setCaminhoValido(true);
 															cam.somaTotalEP(v4.getespaco_tempo());
 															cam.setletrasDoCaminho(v4.getDestino().getNome());
@@ -76,7 +76,7 @@ public class CalculosMultiverso {
 																		
 															for(Aresta v5:verticeAuxiliar5.getRotas()) {//correndo até a ultima possibilidade de nó(quarto nó)
 																if(!cam.isCaminhoValido()) {
-																	if(v5.getDestino().getNome().equals(verticeDestino.getNome())) {
+																	if(v5.getDestino().getNome().equalsIgnoreCase(verticeDestino.getNome())) {
 																		cam.setCaminhoValido(true);
 																		cam.somaTotalEP(v5.getespaco_tempo());
 																		cam.setletrasDoCaminho(v5.getDestino().getNome());
@@ -105,7 +105,7 @@ public class CalculosMultiverso {
 		for(Aresta v:verticeOrigem.getRotas()) {
 			Caminho cam = new Caminho() ;//por conta disso não consegui fazer recursividade
 			if(!cam.isCaminhoValido()) {
-				if(v.getDestino().getNome().equals(verticeDestino.getNome())) {
+				if(v.getDestino().getNome().equalsIgnoreCase(verticeDestino.getNome())) {
 					cam.setCaminhoValido(true);
 					cam.somaTotalEP(v.getespaco_tempo());
 					cam.setletrasDoCaminho(v.getDestino().getNome());
@@ -118,7 +118,7 @@ public class CalculosMultiverso {
 					
 					for(Aresta v2:verticeAuxiliar.getRotas()) {//segundo nó
 						if(!cam.isCaminhoValido() && v2.getespaco_tempo()==20) {
-							if(v2.getDestino().getNome().equals(verticeDestino.getNome())) {
+							if(v2.getDestino().getNome().equalsIgnoreCase(verticeDestino.getNome())) {
 								cam.setCaminhoValido(true);
 								cam.somaTotalEP(v2.getespaco_tempo());
 								cam.setletrasDoCaminho(v2.getDestino().getNome());
@@ -131,7 +131,7 @@ public class CalculosMultiverso {
 								
 								for(Aresta v3:verticeAuxiliar3.getRotas()) {//terceiro nó
 									if(!cam.isCaminhoValido()) {
-										if(v3.getDestino().getNome().equals(verticeDestino.getNome())) {
+										if(v3.getDestino().getNome().equalsIgnoreCase(verticeDestino.getNome())) {
 											cam.setCaminhoValido(true);
 											cam.somaTotalEP(v3.getespaco_tempo());
 											cam.setletrasDoCaminho(v3.getDestino().getNome());
@@ -144,7 +144,7 @@ public class CalculosMultiverso {
 											
 											for(Aresta v4:verticeAuxiliar4.getRotas()) {
 												if(!cam.isCaminhoValido()) {
-													if(v4.getDestino().getNome().equals(verticeDestino.getNome())) {
+													if(v4.getDestino().getNome().equalsIgnoreCase(verticeDestino.getNome())) {
 														cam.setCaminhoValido(true);
 														cam.somaTotalEP(v4.getespaco_tempo());
 														cam.setletrasDoCaminho(v4.getDestino().getNome());
@@ -162,7 +162,18 @@ public class CalculosMultiverso {
 				}
 			}
 		}
-	}	
+	}
+	
+	public void menorCaminho(List<Caminho> listaCaminho) {
+		int menor = 0;
+		for(int i=0; i<listaCaminho.size();i++) {
+			if(listaCaminho.get(i).getTotalEspacoTempo()<=menor) {
+				listaCaminho.get(i).setMenorCaminho(true);
+				menor = listaCaminho.get(i).getTotalEspacoTempo();
+			}
+			menor = listaCaminho.get(i).getTotalEspacoTempo();
+		}
+	}
 }
 		
 	

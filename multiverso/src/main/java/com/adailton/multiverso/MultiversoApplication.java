@@ -24,16 +24,17 @@ public class MultiversoApplication {
 		lista.iniciaVertices();
 		lista.iniciaListaVertice();
 		
-		String b1= "a";
-		String b2= "c";
+		String b1= "b";
+		String b2= "b";
 		
 		UniversoVertice origem = lista.convertStringVertice(b1);
 		UniversoVertice destino = lista.convertStringVertice(b2);
 		
 		CalculosMultiverso calculo = new CalculosMultiverso();
-		List<Caminho> cam = new ArrayList<>();
+		List<Caminho> cam = new ArrayList<>();//criando lista para empilhar os caminhos
 		
 		calculo.calculaCaminhoPrincipal(origem, destino, cam);//entradas de testes
+		calculo.menorCaminho(cam);
 		
 		System.out.println("total de caminhos possiveis: " + cam.size());
 		System.out.println("\n");
@@ -42,6 +43,9 @@ public class MultiversoApplication {
 				System.out.println("qtd de paradas: "+ cam.get(i).getQtdParada());
 				System.out.println("qtd total do percurso: " + cam.get(i).getTotalEspacoTempo());
 				System.out.println(cam.get(i).getLetrasDoCaminho());
+				if(cam.get(i).isMenorCaminho()) {
+					System.out.println("Menor caminho");
+				}
 				System.out.println("*************************");
 			}
 		}
