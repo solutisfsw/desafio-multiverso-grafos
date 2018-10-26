@@ -10,7 +10,7 @@ public class Caminho {
 	private int qtdParada  ;
 	private int totalEspacoTempo=0;
 	private boolean caminhoValido = false;
-	private boolean menorCaminho = false;
+	private String menorCaminho="";
 	
 	
 	
@@ -45,12 +45,13 @@ public class Caminho {
 	public void somaTotalEP(int espacoTempo) {//para contabilizar a distancia total
 		setTotalEspacoTempo(getTotalEspacoTempo() + espacoTempo);
 	}
-	public boolean isMenorCaminho() {
+	public String getMenorCaminho() {
 		return menorCaminho;
 	}
-	public void setMenorCaminho(boolean menorCaminho) {
+	public void setMenorCaminho(String menorCaminho) {
 		this.menorCaminho = menorCaminho;
 	}
+	
 	
 	
 	

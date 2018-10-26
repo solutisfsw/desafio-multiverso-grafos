@@ -43,9 +43,7 @@ public class MultiversoApplication {
 				System.out.println("qtd de paradas: "+ cam.get(i).getQtdParada());
 				System.out.println("qtd total do percurso: " + cam.get(i).getTotalEspacoTempo());
 				System.out.println(cam.get(i).getLetrasDoCaminho());
-				if(cam.get(i).isMenorCaminho()) {
-					System.out.println("Menor caminho");
-				}
+				System.out.println(cam.get(i).getMenorCaminho());
 				System.out.println("*************************");
 			}
 		}

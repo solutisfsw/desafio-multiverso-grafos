@@ -93,8 +93,8 @@ public class CalculosMultiverso {
 									}
 								}
 							}	
-						}		
-					}
+						}
+					}					
 				}
 			}
 		}
@@ -167,8 +167,8 @@ public class CalculosMultiverso {
 	public void menorCaminho(List<Caminho> listaCaminho) {
 		int menor = 0;
 		for(int i=0; i<listaCaminho.size();i++) {
-			if(listaCaminho.get(i).getTotalEspacoTempo()<=menor) {
-				listaCaminho.get(i).setMenorCaminho(true);
+			if(listaCaminho.get(i).getTotalEspacoTempo()<menor) {
+				listaCaminho.get(i).setMenorCaminho("VIAGEM MAIS RÁPIDA");
 				menor = listaCaminho.get(i).getTotalEspacoTempo();
 			}
 			menor = listaCaminho.get(i).getTotalEspacoTempo();

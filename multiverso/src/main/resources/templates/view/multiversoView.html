@@ -10,10 +10,13 @@
 
     <title>Multiverso</title>
     <style >
-   		.container{background-color: blue;
-     					margin: 2%;padding: 2%;
-   		}
+   		.container{background:url("img/galassia.jpg");
+   					width: 100%;
+  					height: 100%;
+     				margin: 2%;padding: 2%;
+     		   		}
    		h1{color:white;}
+   		td,tr{text-align: center}
    		
     </style>
   </head>
@@ -27,13 +30,32 @@
 	    
 	    <form action="@/listaCaminho" method="post">
 				<div id="cadastros">
-					letra1: <input type="text" value="" name="letra1"/></p>
-					letra2 : <input type="text" value="" name="letra2"/>			
+					Origem: <input type="text" value="" name="origem"/></p>
+					Destino : <input type="text" value="" name="destino"/>			
 					
-					<button type="submit" class="btn btn-light" title="Salvar">Salvar</button>
-					<input type="button" value="Voltar" class="btn btn-light" onClick="history.go(-1)" title="Voltar"><!-- voltar para pagina anterior --> 	
+					<button type="submit" class="btn btn-light" title="Salvar">Salvar</button>					 	
 				</div>
-			</form>	
+		</form>	
+		
+		<table class="table table-dark">
+					  <thead>
+					    <tr>
+					    	<th scope="col">Universos que ira percorrer</th>
+						      <th scope="col">Quantidade de Paradas</th>
+						      <th scope="col">total de EP</th>	
+						      <th scope="col">Icone</th>				
+					    </tr>
+					  </thead>
+					  
+					  <tbody>
+					    <tr th:each="caminho : ${listaCaminhos}">
+					    	<td th:text="${caminho.getLetrasDoCaminho()}"></td>
+							<td th:text="${caminho.getQtdParada()}"></td>							
+							<td th:text="${caminho.getTotalEspacoTempo()}"></td>
+							<td th:text="${caminho.getMenorCaminho()}"></td>
+						</tr>
+					  </tbody>
+					</table>
 	
 	    <!-- JavaScript (Opcional) -->
 	    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->

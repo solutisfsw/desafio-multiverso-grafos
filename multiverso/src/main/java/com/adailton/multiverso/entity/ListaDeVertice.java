@@ -7,11 +7,11 @@ import java.util.List;
 public class ListaDeVertice {
 	private List<UniversoVertice> listaVertice = new ArrayList<>();
 		
-	private UniversoVertice a = new UniversoVertice("a");
-	private UniversoVertice b = new UniversoVertice("b");
-	private UniversoVertice c = new UniversoVertice("c");
-	private UniversoVertice d = new UniversoVertice("d");
-	private UniversoVertice e = new UniversoVertice("e");
+	private UniversoVertice A = new UniversoVertice("A");
+	private UniversoVertice B = new UniversoVertice("B");
+	private UniversoVertice C = new UniversoVertice("C");
+	private UniversoVertice D = new UniversoVertice("D");
+	private UniversoVertice E = new UniversoVertice("E");
 	
 	public List<UniversoVertice> getListaVertice() {
 		return listaVertice;
@@ -22,27 +22,27 @@ public class ListaDeVertice {
 	
 	public void iniciaVertices() {
 		//adicionando as Arestas para cada classe
-		a.setRotas(Arrays.asList(new Aresta(70, e),
-						new Aresta(50, b),
-						new Aresta(50, d) ));
+		A.setRotas(Arrays.asList(new Aresta(70, E),
+						new Aresta(50, B),
+						new Aresta(50, D) ));
 
-		b.setRotas(Arrays.asList(new Aresta(40, c)));
+		B.setRotas(Arrays.asList(new Aresta(40, C)));
 
-		c.setRotas(Arrays.asList(new Aresta(40, d),
-								new Aresta(20, e)));
+		C.setRotas(Arrays.asList(new Aresta(40, D),
+								new Aresta(20, E)));
 
-		d.setRotas(Arrays.asList(new Aresta(40, c),
-								new Aresta(80, e)));
+		D.setRotas(Arrays.asList(new Aresta(40, C),
+								new Aresta(80, E)));
 		
-		e.setRotas(Arrays.asList(new Aresta(30, b)));
+		E.setRotas(Arrays.asList(new Aresta(30, B)));
 	}
 		
-	public void iniciaListaVertice() {
-		listaVertice.add(a);
-		listaVertice.add(b);
-		listaVertice.add(c);
-		listaVertice.add(d);
-		listaVertice.add(e);
+	public void iniciaListaVertice() {//empilhando 
+		listaVertice.add(A);
+		listaVertice.add(B);
+		listaVertice.add(C);
+		listaVertice.add(D);
+		listaVertice.add(E);
 
 	}
 			
