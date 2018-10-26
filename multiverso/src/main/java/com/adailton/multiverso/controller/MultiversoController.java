@@ -35,6 +35,8 @@ public class MultiversoController {
 	
 	@PostMapping		
 	public ModelAndView calucularCaminhos(String origem, String destino) {
+		listaCaminho.removeAll(listaCaminho);
+		
 		lista.iniciaVertices();
 		lista.iniciaListaVertice();		
 		verticeOrigem = lista.convertStringVertice(origem);
