@@ -4,18 +4,25 @@
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+	
+	<script type="text/javascript" src="Abror/jquery-1.6.1.min.js"></script>
+	<script type="text/javascript" src="Abror/arbor.js"></script>
+	<script type="text/javascript" src="Abror/graphics.js"></script>
+	<script type="text/javascript" src="Abror/renderer.js"></script>
+	
     <title>Multiverso</title>
     <style >
-   		.container{background:url("img/galassia.jpg");
+   		.container{background:url('img/galassia.jpg');
+   					background-size:100%;
    					width: 100%;
   					height: 100%;
      				margin: 2%;padding: 2%;
      		   		}
-   		h1{color:white;}
+   		h1{color:green;}
    		td,tr{text-align: center}
    		
     </style>
@@ -23,27 +30,52 @@
   <body>
 	  <div class="container">
 	  	<h1>Multiverso</h1>
-	  	<h2>Seja Bem vindo viajante do espaço</h2>
+	  	<h2>Seja Bem vindo viajante do espaço</h2>	  		  	
 	    <div>
 	    	<p>A Multiverso Corporation tem a tecnologia mais avança de transporte intergalático, para transforma sua viagem a mais rápida e confortável por diversos universos.</p>
 	    </div>
-	    
-	    <form action="@/listaCaminho" method="post">
-				<div id="cadastros">
-					Origem: <input type="text" value="" name="origem"/></p>
-					Destino : <input type="text" value="" name="destino"/>			
-					
-					<button type="submit" class="btn btn-light" title="Salvar">Salvar</button>					 	
-				</div>
-		</form>	
-		
+	    	<canvas id="grafo" width="500" height="500"></canvas>
+	  	<script type="text/javascript">
+	  		var sys = arbor.ParticleSystem(1000,400,1,true);
+	  		sys.renderer = Renderer("#grafo");
+	  		
+	  		var data = {
+	  				nodes:{
+	  					nodoA:{'label':'A','shape':'dot','color':'red'}
+	  				}
+	  		};
+	  		sys.graft(data);
+	  	</script>
+		   <form action="" method="post"> 
+		   	<div>
+		   		<p>Informe-nos a baixo qual seu universo de partida e qual seu destino e lhe informaremos as possibilidade dos percussos  mais eficientes e eficaz disponível para sua viagem.<p>
+		   		<label>Universo de Partida: </label>
+				 <select name="origem">
+					  <option value="a">A</option>
+					  <option value="b">B</option>
+					  <option value="c">C</option>
+					  <option value="d">D</option>
+					  <option value="e">E</option>
+				</select>
+				
+				<label>Destino: </label>
+				<select name="destino">
+					  <option value="b">B</option>
+					  <option value="c">C</option>
+					  <option value="d">D</option>
+					  <option value="e">E</option>
+				</select>
+				<button type="submit" title="Listar Caminhos"><i class="material-icons">list_alt</i></button>
+		   	</div>
+					 			
+		</form>			
 		<table class="table table-dark">
 					  <thead>
 					    <tr>
-					    	<th scope="col">Universos que ira percorrer</th>
+					    	<th scope="col">Portais de Universos que ira percorrer</th>
 						      <th scope="col">Quantidade de Paradas</th>
-						      <th scope="col">total de EP</th>	
-						      <th scope="col">Icone</th>				
+						      <th scope="col"><i title="Total de Espaço Tempo" class="material-icons">timer</i></th>	
+						      <th scope="col"><i title="Veja a viagem mais rápida" class="material-icons">directions_run</i></th>				
 					    </tr>
 					  </thead>
 					  
