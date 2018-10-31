@@ -7,11 +7,11 @@ import java.util.List;
 public class ListaDeVertice {
 	private List<UniversoVertice> listaVertice = new ArrayList<>();
 		
-	private UniversoVertice A = new UniversoVertice("A");
-	private UniversoVertice B = new UniversoVertice("B");
-	private UniversoVertice C = new UniversoVertice("C");
-	private UniversoVertice D = new UniversoVertice("D");
-	private UniversoVertice E = new UniversoVertice("E");
+	private UniversoVertice a = new UniversoVertice("A");
+	private UniversoVertice b = new UniversoVertice("B");
+	private UniversoVertice c = new UniversoVertice("C");
+	private UniversoVertice d = new UniversoVertice("D");
+	private UniversoVertice e = new UniversoVertice("E");
 	
 	public List<UniversoVertice> getListaVertice() {
 		return listaVertice;
@@ -22,27 +22,27 @@ public class ListaDeVertice {
 	
 	public void iniciaVertices() {
 		//adicionando as Arestas para cada classe
-		A.setRotas(Arrays.asList(new Aresta(70, E),
-						new Aresta(50, B),
-						new Aresta(50, D) ));
+		a.setRotas(Arrays.asList(new Aresta(70, e),
+						new Aresta(50, b),
+						new Aresta(50, d) ));
 
-		B.setRotas(Arrays.asList(new Aresta(40, C)));
+		b.setRotas(Arrays.asList(new Aresta(40, c)));
 
-		C.setRotas(Arrays.asList(new Aresta(40, D),
-								new Aresta(20, E)));
+		c.setRotas(Arrays.asList(new Aresta(40, d),
+								new Aresta(20, e)));
 
-		D.setRotas(Arrays.asList(new Aresta(40, C),
-								new Aresta(80, E)));
+		d.setRotas(Arrays.asList(new Aresta(40, c),
+								new Aresta(80, e)));
 		
-		E.setRotas(Arrays.asList(new Aresta(30, B)));
+		e.setRotas(Arrays.asList(new Aresta(30, b)));
 	}
 		
 	public void iniciaListaVertice() {//empilhando 
-		listaVertice.add(A);
-		listaVertice.add(B);
-		listaVertice.add(C);
-		listaVertice.add(D);
-		listaVertice.add(E);
+		listaVertice.add(a);
+		listaVertice.add(b);
+		listaVertice.add(c);
+		listaVertice.add(d);
+		listaVertice.add(e);
 
 	}
 			
@@ -53,6 +53,36 @@ public class ListaDeVertice {
 				return v;				
 			}			
 		}return null;
+	}
+	public UniversoVertice getA() {
+		return a;
+	}
+	public void setA(UniversoVertice a) {
+		this.a = a;
+	}
+	public UniversoVertice getB() {
+		return b;
+	}
+	public void setB(UniversoVertice b) {
+		this.b = b;
+	}
+	public UniversoVertice getC() {
+		return c;
+	}
+	public void setC(UniversoVertice c) {
+		this.c = c;
+	}
+	public UniversoVertice getD() {
+		return d;
+	}
+	public void setD(UniversoVertice d) {
+		this.d = d;
+	}
+	public UniversoVertice getE() {
+		return e;
+	}
+	public void setE(UniversoVertice e) {
+		this.e = e;
 	}
 		
 		

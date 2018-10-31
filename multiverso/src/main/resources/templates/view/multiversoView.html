@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
   <head>
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
@@ -9,45 +9,43 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	
-	<script type="text/javascript" src="Abror/jquery-1.6.1.min.js"></script>
-	<script type="text/javascript" src="Abror/arbor.js"></script>
-	<script type="text/javascript" src="Abror/graphics.js"></script>
-	<script type="text/javascript" src="Abror/renderer.js"></script>
+	 <link rel="stylesheet" th:href="@{/css/site.css}">
+	
+	<script  th:src="@{/javascripts/Arbor/jquery-1.6.1.min.js}"></script>
+	<script  th:src="@{/javascripts/Arbor/arbor.js}"></script>
+	<script  th:src="@{/javascripts/Arbor/graphics.js}"></script>
+	<script  th:src="@{/javascripts/Arbor/renderer.js}"></script>
 	
     <title>Multiverso</title>
     <style >
-   		.container{background:url('img/galassia.jpg');
-   					background-size:100%;
-   					width: 100%;
-  					height: 100%;
-     				margin: 2%;padding: 2%;
+   		body{background-image:url("https://conteudo.imguol.com.br/c/noticias/2015/02/09/ilustracao-de-wormhole-buraco-de-minhoca-um-atalho-no-universo-que-permitiria-viajar-no-tempo-espaco-1423508533414_615x470.jpg");
+     				background-repeat: no-repeat;
+     				background-size:100%;
+     				margin: 2%;padding: 2%; 
+     				color:#fff!important ;   				
      		   		}
-   		h1{color:green;}
-   		td,tr{text-align: center}
+     	#superior{background-color:rgb(28,28,28,0.7); padding:  1%;margin-bottom: 2%}
+     	
+   		h1{text-align: center; color:#fff!important; 
+   		}
+   		td,tr{text-align: center;}
+   		select{background:#2E2E2E;color:#fff!important ;}
+   		table{background-color:rgb(28,28,28,0.7);}
+   		tbody tr:hover{background-color:#2E2E2E}
+   		
    		
     </style>
   </head>
   <body>
-	  <div class="container">
+	  <div id="superior">
 	  	<h1>Multiverso</h1>
 	  	<h2>Seja Bem vindo viajante do espaço</h2>	  		  	
-	    <div>
+
 	    	<p>A Multiverso Corporation tem a tecnologia mais avança de transporte intergalático, para transforma sua viagem a mais rápida e confortável por diversos universos.</p>
-	    </div>
-	    	<canvas id="grafo" width="500" height="500"></canvas>
-	  	<script type="text/javascript">
-	  		var sys = arbor.ParticleSystem(1000,400,1,true);
-	  		sys.renderer = Renderer("#grafo");
-	  		
-	  		var data = {
-	  				nodes:{
-	  					nodoA:{'label':'A','shape':'dot','color':'red'}
-	  				}
-	  		};
-	  		sys.graft(data);
-	  	</script>
-		   <form action="" method="post"> 
-		   	<div>
+	    <!-- <canvas id="grafo" width="500" height="500"></canvas> -->
+  	
+		   <form  method="post"> 
+		   	
 		   		<p>Informe-nos a baixo qual seu universo de partida e qual seu destino e lhe informaremos as possibilidade dos percussos  mais eficientes e eficaz disponível para sua viagem.<p>
 		   		<label>Universo de Partida: </label>
 				 <select name="origem">
@@ -65,11 +63,12 @@
 					  <option value="d">D</option>
 					  <option value="e">E</option>
 				</select>
-				<button type="submit" title="Listar Caminhos"><i class="material-icons">list_alt</i></button>
-		   	</div>
+				<button style="background:#2E2E2E; color:#fff!important;" title="Listar Caminhos"><i class="material-icons">list_alt</i></button>
+		   	
 					 			
-		</form>			
-		<table class="table table-dark">
+		</form>	
+		</div>		
+		<table class="table table-dark" style="background-color:rgb(28,28,28,0.7);">
 					  <thead>
 					    <tr>
 					    	<th scope="col">Portais de Universos que ira percorrer</th>
@@ -87,14 +86,30 @@
 							<td th:text="${caminho.getMenorCaminho()}"></td>
 						</tr>
 					  </tbody>
-					</table>
+		</table>
 	
 	    <!-- JavaScript (Opcional) -->
 	    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
 	    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-	  
-	  </div> 
+		
+			<script type="text/javascript">
+		  		
+		  		$(document).ready(function() {
+		  			var sys = arbor.ParticleSystem(1000,400,1,true);
+			  		sys.renderer = Renderer("#grafo");
+			  		
+			  		var data = {
+			  				nodes:{
+			  					nodoA:{'label':'A','shape':'dot','color':'red'}
+			  				}
+			  		};
+			  		sys.graft(data);	
+		  		});
+		  		
+		  	</script>
+			  
+	   
   </body>
 </html>

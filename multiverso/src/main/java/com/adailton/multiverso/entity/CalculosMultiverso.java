@@ -19,9 +19,9 @@ public class CalculosMultiverso {
 	
 	
 	public void calculaCaminhoNormal(UniversoVertice verticeOrigem, UniversoVertice verticeDestino,List<Caminho> listaCaminho) {			
-			
+		
 			for(Aresta v:verticeOrigem.getRotas()) {
-				Caminho cam = new Caminho() ;//por conta disso não consegui fazer recursividade
+				Caminho cam = new Caminho() ;//por conta disso não consegui fazer recursividade	
 				if(!cam.isCaminhoValido()) {
 					if(v.getDestino().getNome().equalsIgnoreCase(verticeDestino.getNome())) {
 						cam.setCaminhoValido(true);
@@ -63,7 +63,7 @@ public class CalculosMultiverso {
 												cam.setletrasDoCaminho(v3.getDestino().getNome());
 												UniversoVertice verticeAuxiliar4 = v3.getDestino();
 												
-												for(Aresta v4:verticeAuxiliar4.getRotas()) {
+												for(Aresta v4:verticeAuxiliar4.getRotas()) {//quarto nó
 													if(!cam.isCaminhoValido()) {
 														if(v4.getDestino().getNome().equalsIgnoreCase(verticeDestino.getNome())) {
 															cam.setCaminhoValido(true);
@@ -99,7 +99,7 @@ public class CalculosMultiverso {
 						}
 					}					
 				}
-			}
+			}			
 		}
 	
 	public void calculaCaminhoBB(UniversoVertice verticeOrigem, UniversoVertice verticeDestino,List<Caminho> listaCaminho) {
@@ -145,7 +145,7 @@ public class CalculosMultiverso {
 											cam.setletrasDoCaminho(v3.getDestino().getNome());
 											UniversoVertice verticeAuxiliar4 = v3.getDestino();
 											
-											for(Aresta v4:verticeAuxiliar4.getRotas()) {
+											for(Aresta v4:verticeAuxiliar4.getRotas()) {//quarto nó
 												if(!cam.isCaminhoValido()) {
 													if(v4.getDestino().getNome().equalsIgnoreCase(verticeDestino.getNome())) {
 														cam.setCaminhoValido(true);
@@ -167,7 +167,8 @@ public class CalculosMultiverso {
 		}
 	}
 public void calculaCaminhoEE(UniversoVertice verticeOrigem, UniversoVertice verticeDestino,List<Caminho> listaCaminho) {
-		
+		Caminho cam1 = new Caminho();
+		cam1.setletrasDoCaminho(verticeOrigem.getNome());
 		
 		for(Aresta v:verticeOrigem.getRotas()) {
 			Caminho cam = new Caminho() ;//por conta disso não consegui fazer recursividade
@@ -209,7 +210,7 @@ public void calculaCaminhoEE(UniversoVertice verticeOrigem, UniversoVertice vert
 											cam.setletrasDoCaminho(v3.getDestino().getNome());
 											UniversoVertice verticeAuxiliar4 = v3.getDestino();
 											
-											for(Aresta v4:verticeAuxiliar4.getRotas()) {
+											for(Aresta v4:verticeAuxiliar4.getRotas()) {//quarto nó
 												if(!cam.isCaminhoValido()) {
 													if(v4.getDestino().getNome().equalsIgnoreCase(verticeDestino.getNome())) {
 														cam.setCaminhoValido(true);
@@ -229,6 +230,8 @@ public void calculaCaminhoEE(UniversoVertice verticeOrigem, UniversoVertice vert
 				}
 			}
 		}
+		
+		
 	}
 	
 	public void menorCaminho(List<Caminho> listaCaminho) {
