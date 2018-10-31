@@ -1,24 +1,24 @@
 class Dimensao:
 
     def __init__(self):
-        self.nome = None
-        self.rotas = None
-        self.ativo = True
+        self._nome = None
+        self._rotas = None
+        self._ativo = True
 
     def set_nome(self, nome):
-        self.nome = nome
+        self._nome = nome
 
     def get_nome(self):
-        return self.nome
+        return self._nome
 
     def set_rotas(self, rotas):
-        self.rotas = rotas
+        self._rotas = rotas
 
     def get_rotas(self):
-        return self.rotas
+        return self._rotas
 
     def set_ativo(self, ativo):
-        self.ativo = ativo
+        self._ativo = ativo
 
     def get_ativo(self):
-        return self.ativo
+        return self._ativo

@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="928049b5-80af-45b3-8d7b-eb94d4938f4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/calculo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lista_dimensao.py" beforeDir="false" afterPath="$PROJECT_DIR$/lista_dimensao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculo.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dimensao.py" beforeDir="false" afterPath="$PROJECT_DIR$/dimensao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rota.py" beforeDir="false" afterPath="$PROJECT_DIR$/rota.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,12 +56,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="2319" />
+          <entry key="py" value="3001" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="2319" />
+          <entry key="Python" value="3001" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -77,11 +78,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="-368">
+              <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
               <folding>
                 <element signature="e#2#29#0" expanded="true" />
                 <element signature="e#157#344#0" />
@@ -89,21 +90,25 @@
                 <element signature="e#661#848#0" />
                 <element signature="e#776#951#0" />
                 <element signature="e#1236#1419#0" />
-                <marker date="1541019107733" expanded="true" signature="1575:1749" ph="..." />
+                <element signature="e#1580#1744#0" />
+                <element signature="e#1803#1982#0" />
+                <element signature="e#1091#1250#0" />
+                <marker date="1541027200497" expanded="true" signature="2122:2294" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/calculo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-510">
-              <caret line="11" column="88" selection-start-line="11" selection-start-column="88" selection-end-line="11" selection-end-column="88" />
+            <state relative-caret-position="-23">
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
               <folding>
-                <marker date="1541019965541" expanded="true" signature="693:694" ph="..." />
-                <marker date="1541019965541" expanded="true" signature="786:792" ph="..." />
-                <marker date="1541019965541" expanded="true" signature="1057:1058" ph="..." />
+                <marker date="1541027017209" expanded="true" signature="838:839" ph="..." />
+                <marker date="1541027017209" expanded="true" signature="968:974" ph="..." />
+                <marker date="1541027017209" expanded="true" signature="1268:1269" ph="..." />
+                <marker date="1541027017209" expanded="true" signature="3053:3160" ph="..." />
               </folding>
             </state>
           </provider>
@@ -112,10 +117,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lista_dimensao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+            <state>
+              <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
               <folding>
-                <element signature="e#0#29#0" expanded="true" />
                 <marker date="1541012418024" expanded="true" signature="70:71" ph="..." />
               </folding>
             </state>
@@ -125,8 +129,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dimensao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="240">
+              <caret line="16" column="17" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -134,10 +138,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rota.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
+            <state relative-caret-position="90">
+              <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
               <folding>
-                <marker date="1540862129252" expanded="true" signature="11:12" ph="..." />
+                <marker date="1541026450243" expanded="true" signature="11:12" ph="..." />
               </folding>
             </state>
           </provider>
@@ -155,7 +159,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>multv</find>
+      <find>nome</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -164,12 +172,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/rotas.py" />
-        <option value="$PROJECT_DIR$/rota.py" />
-        <option value="$PROJECT_DIR$/dimensao.py" />
         <option value="$PROJECT_DIR$/calculos.py" />
         <option value="$PROJECT_DIR$/lista_dimensao.py" />
-        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/dimensao.py" />
+        <option value="$PROJECT_DIR$/rota.py" />
         <option value="$PROJECT_DIR$/calculo.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -280,7 +288,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.46634614" visible="true" weight="0.31738436" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3990228" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39872408" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4939577" weight="0.32854864" />
@@ -299,38 +307,50 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/rota.py">
+    <entry file="file://$PROJECT_DIR$/lista_dimensao.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
+          <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
           <folding>
-            <marker date="1540862129252" expanded="true" signature="11:12" ph="..." />
+            <marker date="1541012418024" expanded="true" signature="70:71" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dimensao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="240">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lista_dimensao.py">
+    <entry file="file://$PROJECT_DIR$/rota.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        <state relative-caret-position="90">
+          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <marker date="1541012418024" expanded="true" signature="70:71" ph="..." />
+            <marker date="1541026450243" expanded="true" signature="11:12" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-23">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+          <folding>
+            <marker date="1541027017209" expanded="true" signature="838:839" ph="..." />
+            <marker date="1541027017209" expanded="true" signature="968:974" ph="..." />
+            <marker date="1541027017209" expanded="true" signature="1268:1269" ph="..." />
+            <marker date="1541027017209" expanded="true" signature="3053:3160" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="-368">
+          <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
           <folding>
             <element signature="e#2#29#0" expanded="true" />
             <element signature="e#157#344#0" />
@@ -338,19 +358,10 @@
             <element signature="e#661#848#0" />
             <element signature="e#776#951#0" />
             <element signature="e#1236#1419#0" />
-            <marker date="1541019107733" expanded="true" signature="1575:1749" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calculo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="11" column="88" selection-start-line="11" selection-start-column="88" selection-end-line="11" selection-end-column="88" />
-          <folding>
-            <marker date="1541019965541" expanded="true" signature="693:694" ph="..." />
-            <marker date="1541019965541" expanded="true" signature="786:792" ph="..." />
-            <marker date="1541019965541" expanded="true" signature="1057:1058" ph="..." />
+            <element signature="e#1580#1744#0" />
+            <element signature="e#1803#1982#0" />
+            <element signature="e#1091#1250#0" />
+            <marker date="1541027200497" expanded="true" signature="2122:2294" ph="..." />
           </folding>
         </state>
       </provider>
