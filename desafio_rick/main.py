@@ -1,57 +1,76 @@
-from lista_dimensao import Multverso
-
-distancias = []
-multverso = Multverso()
-def definir_rotas(
-        atual,
-        final,
-        passando,
-        distancia=0,
-        passou=False):
-
-    if atual == final:
-        if passou or passando==None:
-            distancias.append(distancia)
-        return
-
-
-    atual.set_ativo(False)
-    for rota in atual.rotas:
-        definir_rotas(
-            atual=rota.dimensao,
-            final=final,
-            passando=passando,
-            distancia=distancia+rota.distancia,
-            passou=passou or rota.dimensao == passando
-        )
-
-        if atual.get_ativo() is False:
-            multverso.ativar_universos()
-            return
-
+from calculo import Calculo
+from lista_dimensao import Multiverso
 
 """A distância de A a C passando por B?"""
-def distancia_A_a_C_passando_B():
-    definir_rotas(atual=multverso.a, final=multverso.c, passando=multverso.b)
+def distancia_A_a_C_passando_B(calculo):
+    try:
+        calculo.definir_rotas_universos(partida=Multiverso.a, chegada=Multiverso.c, passando=Multiverso.b)
+    except RecursionError:
+        print("Inpossível chegar ao universo")
 
 """A distância entre A e D?"""
-def distancia_A_a_D():
-    definir_rotas(atual=multverso.a, final=multverso.d, passando=None)
+def distancia_A_a_D(calculo):
+    try:
+        calculo.definir_rotas_universos(partida=Multiverso.a, chegada=Multiverso.d)
+    except RecursionError:
+        print("Inpossível chegar ao universo")
 
 """A distância de A a C passando por D?"""
-def distancia_A_a_C_passando_D():
-    definir_rotas(atual=multverso.a, final=multverso.c, passando=multverso.d)
+def distancia_A_a_C_passando_D(calculo):
+    try:
+        calculo.definir_rotas_universos(partida=Multiverso.a, chegada=Multiverso.c, passando=Multiverso.d)
+    except RecursionError:
+        print("Inpossível chegar ao universo")
+
+"""O número de rotas saindo de C e voltando a C com no máximo 3 paradas?"""
+def distancia_C_a_C_paradas_3(calculo):
+    try:
+        calculo.definir_rotas_universos(partida=Multiverso.c, num_paradas_max=3)
+    except RecursionError:
+        print("Inpossível retornar ao universo")
+
+"""O número de rotas entre A e C com no máximo 4 paradas?"""
+def distancia_A_a_C_paradas_4(calculo):
+    try:
+        calculo.definir_rotas_universos(partida=Multiverso.a, chegada=Multiverso.c, num_paradas_max=4)
+    except RecursionError:
+        print("Inpossível chegar ao universo")
+
+"""O número de diferentes rotas saindo de C e voltando a C com distância máxima de 300 unidades de espaço-tempo?"""
+def distancia_C_a_C_unidades_300(calculo):
+    try:
+        calculo.definir_rotas_universos(partida=Multiverso.c, num_unidades_max=300)
+    except RecursionError:
+        print("Inpossível retornar ao universo")
 
 
-distancia_A_a_C_passando_B()
-print("A distância de A a C passando por B:\n", distancias)
+
+
+calculo=Calculo()
+distancia_A_a_C_passando_B(calculo)
+print("A distância de A a C passando por B:\n", calculo.distancias)
 print("\n")
 
-distancias=[]
-distancia_A_a_D()
-print("A distância entre A e D:\n", distancias)
+calculo=Calculo()
+distancia_A_a_D(calculo)
+print("A distância entre A e D:\n", calculo.distancias)
 print("\n")
 
-distancias=[]
-distancia_A_a_C_passando_D()
-print("A distância de A a C passando por D:\n", distancias)
+calculo=Calculo()
+distancia_A_a_C_passando_D(calculo)
+print("A distância de A a C passando por D:\n", calculo.distancias)
+print("\n")
+
+calculo=Calculo()
+distancia_C_a_C_paradas_3(calculo)
+print("O número de rotas de C e voltando a C com no máximo 3 paradas:\n", calculo.distancias.__len__())
+print("\n")
+
+calculo=Calculo()
+distancia_A_a_C_paradas_4(calculo)
+print("O número de rotas de A a C com no máximo 4 paradas:\n", calculo.distancias.__len__())
+print("\n")
+
+calculo=Calculo()
+distancia_C_a_C_unidades_300(calculo)
+print(" número de rotas de C e voltando a C com no máximo 300 unidades:\n", calculo.distancias.__len__())

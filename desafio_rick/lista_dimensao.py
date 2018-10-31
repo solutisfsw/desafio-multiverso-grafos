@@ -1,7 +1,7 @@
 from dimensao import Dimensao
 from rota import Rota
 
-class Multverso:
+class Multiverso:
     a = Dimensao()
     b = Dimensao()
     c = Dimensao()

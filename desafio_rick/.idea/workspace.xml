@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="928049b5-80af-45b3-8d7b-eb94d4938f4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/desafio_rick.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/giovanni.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dimensao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lista_dimensao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rota.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/calculo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lista_dimensao.py" beforeDir="false" afterPath="$PROJECT_DIR$/lista_dimensao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,32 +47,63 @@
     <session id="-75346205">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.31" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="350" />
+          <entry key="py" value="2319" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="350" />
+          <entry key="Python" value="2319" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="4" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+            <state relative-caret-position="-15">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
               <folding>
-                <marker date="1540953844637" expanded="true" signature="733:734" ph="..." />
-                <marker date="1540953844637" expanded="true" signature="900:905" ph="..." />
+                <element signature="e#2#29#0" expanded="true" />
+                <element signature="e#157#344#0" />
+                <element signature="e#409#573#0" />
+                <element signature="e#661#848#0" />
+                <element signature="e#776#951#0" />
+                <element signature="e#1236#1419#0" />
+                <marker date="1541019107733" expanded="true" signature="1575:1749" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/calculo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-510">
+              <caret line="11" column="88" selection-start-line="11" selection-start-column="88" selection-end-line="11" selection-end-column="88" />
+              <folding>
+                <marker date="1541019965541" expanded="true" signature="693:694" ph="..." />
+                <marker date="1541019965541" expanded="true" signature="786:792" ph="..." />
+                <marker date="1541019965541" expanded="true" signature="1057:1058" ph="..." />
               </folding>
             </state>
           </provider>
@@ -88,11 +112,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lista_dimensao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-275">
-              <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+            <state relative-caret-position="75">
+              <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
-                <marker date="1540951053423" expanded="true" signature="69:70" ph="..." />
+                <marker date="1541012418024" expanded="true" signature="70:71" ph="..." />
               </folding>
             </state>
           </provider>
@@ -128,6 +152,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>multv</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -137,16 +166,18 @@
         <option value="$PROJECT_DIR$/rotas.py" />
         <option value="$PROJECT_DIR$/rota.py" />
         <option value="$PROJECT_DIR$/dimensao.py" />
+        <option value="$PROJECT_DIR$/calculos.py" />
         <option value="$PROJECT_DIR$/lista_dimensao.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/calculo.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="686" />
-    <option name="y" value="38" />
-    <option name="width" value="668" />
-    <option name="height" value="595" />
+    <option name="x" value="696" />
+    <option name="y" value="79" />
+    <option name="width" value="660" />
+    <option name="height" value="589" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -243,7 +274,7 @@
     <frame x="-1" y="26" width="1368" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1918429" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19486405" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -263,27 +294,6 @@
       <window_info anchor="right" id="R Packages" order="3" />
       <window_info anchor="right" id="R Graphics" order="4" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.39423078" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.46634614" visible="true" weight="0.3110749" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4939577" weight="0.32854864" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.53365386" side_tool="true" visible="true" weight="0.3110749" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="R Packages" order="3" />
-      <window_info anchor="right" id="R Graphics" order="4" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -308,22 +318,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lista_dimensao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-275">
-          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        <state relative-caret-position="75">
+          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <marker date="1540951053423" expanded="true" signature="69:70" ph="..." />
+            <marker date="1541012418024" expanded="true" signature="70:71" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="-15">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
           <folding>
-            <marker date="1540953844637" expanded="true" signature="733:734" ph="..." />
-            <marker date="1540953844637" expanded="true" signature="900:905" ph="..." />
+            <element signature="e#2#29#0" expanded="true" />
+            <element signature="e#157#344#0" />
+            <element signature="e#409#573#0" />
+            <element signature="e#661#848#0" />
+            <element signature="e#776#951#0" />
+            <element signature="e#1236#1419#0" />
+            <marker date="1541019107733" expanded="true" signature="1575:1749" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calculo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-510">
+          <caret line="11" column="88" selection-start-line="11" selection-start-column="88" selection-end-line="11" selection-end-column="88" />
+          <folding>
+            <marker date="1541019965541" expanded="true" signature="693:694" ph="..." />
+            <marker date="1541019965541" expanded="true" signature="786:792" ph="..." />
+            <marker date="1541019965541" expanded="true" signature="1057:1058" ph="..." />
           </folding>
         </state>
       </provider>
