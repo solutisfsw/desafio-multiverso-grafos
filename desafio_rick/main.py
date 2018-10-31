@@ -95,4 +95,4 @@ print("\n")
 
 calculo=Calculo()
 distancia_C_a_C_unidades_300(calculo)
-print(" número de rotas de C e voltando a C com no máximo 300 unidades:\n", calculo.get_distancias().__len__())
+print("O número de rotas de C e voltando a C com no máximo 300 unidades:\n", calculo.get_distancias().__len__())
