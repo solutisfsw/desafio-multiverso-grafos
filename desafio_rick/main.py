@@ -1,5 +1,5 @@
-from calculo import Calculo
-from lista_dimensao import Multiverso
+from util.calculo import Calculo
+from util.lista_dimensao import Multiverso
 
 """A distância de A a C passando por B?"""
 def distancia_A_a_C_passando_B(calculo):

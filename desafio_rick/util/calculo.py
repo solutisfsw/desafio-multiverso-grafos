@@ -16,7 +16,7 @@
 
 """
 
-from lista_dimensao import Multiverso
+from util.lista_dimensao import Multiverso
 
 class Calculo:
 

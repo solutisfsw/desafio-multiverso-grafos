@@ -1,5 +1,5 @@
-from dimensao import Dimensao
-from rota import Rota
+from model.dimensao import Dimensao
+from model.rota import Rota
 
 class Multiverso:
     a = Dimensao()
