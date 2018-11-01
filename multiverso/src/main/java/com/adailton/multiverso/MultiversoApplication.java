@@ -19,6 +19,5 @@ public class MultiversoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MultiversoApplication.class, args);
 			
-		
 	}
 }

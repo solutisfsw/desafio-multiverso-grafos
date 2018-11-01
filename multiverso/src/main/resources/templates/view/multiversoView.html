@@ -9,23 +9,17 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	
-	 <link rel="stylesheet" th:href="@{/css/site.css}">
-	
-	<script  th:src="@{/javascripts/Arbor/jquery-1.6.1.min.js}"></script>
-	<script  th:src="@{/javascripts/Arbor/arbor.js}"></script>
-	<script  th:src="@{/javascripts/Arbor/graphics.js}"></script>
-	<script  th:src="@{/javascripts/Arbor/renderer.js}"></script>
 	
     <title>Multiverso</title>
     <style >
    		body{background-image:url("https://conteudo.imguol.com.br/c/noticias/2015/02/09/ilustracao-de-wormhole-buraco-de-minhoca-um-atalho-no-universo-que-permitiria-viajar-no-tempo-espaco-1423508533414_615x470.jpg");
      				background-repeat: no-repeat;
      				background-size:100%;
-     				margin: 2%;padding: 2%; 
+     				margin: 1%;padding: 1%; 
      				color:#fff!important ;   				
      		   		}
-     	#superior{background-color:rgb(28,28,28,0.7); padding:  1%;margin-bottom: 2%}
-     	
+     	#superior{background-color:rgb(28,28,28,0.7); padding:  1%;margin-bottom: 1%}
+     	img{width: 280px; height: 280px}
    		h1{text-align: center; color:#fff!important; 
    		}
    		td,tr{text-align: center;}
@@ -43,10 +37,10 @@
 
 	    	<p>A Multiverso Corporation tem a tecnologia mais avança de transporte intergalático, para transforma sua viagem a mais rápida e confortável por diversos universos.</p>
 	    <!-- <canvas id="grafo" width="500" height="500"></canvas> -->
-  	
-		   <form  method="post"> 
+  		<img src="../img/grafoPng.png">
+		<form  method="post"> 
 		   	
-		   		<p>Informe-nos a baixo qual seu universo de partida e qual seu destino e lhe informaremos as possibilidade dos percussos  mais eficientes e eficaz disponível para sua viagem.<p>
+		   		<p style="float: right">Informe-nos a baixo qual seu universo de partida e qual seu destino e lhe informaremos as possibilidade dos percussos  mais eficientes e eficaz disponível para sua viagem.<p>
 		   		<label>Universo de Partida: </label>
 				 <select name="origem">
 					  <option value="a">A</option>
@@ -71,7 +65,7 @@
 		<table class="table table-dark" style="background-color:rgb(28,28,28,0.7);">
 					  <thead>
 					    <tr>
-					    	<th scope="col">Portais de Universos que ira percorrer</th>
+					    	<th scope="col">Portais que ira percorrer</th>
 						      <th scope="col">Quantidade de Paradas</th>
 						      <th scope="col"><i title="Total de Espaço Tempo" class="material-icons">timer</i></th>	
 						      <th scope="col"><i title="Veja a viagem mais rápida" class="material-icons">directions_run</i></th>				

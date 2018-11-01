@@ -99,8 +99,10 @@ public class CalculosMultiverso {
 						}
 					}					
 				}
-			}			
+			}
+			primeiroIndiceOrigem(listaCaminho, verticeOrigem );
 		}
+	
 	
 	public void calculaCaminhoBB(UniversoVertice verticeOrigem, UniversoVertice verticeDestino,List<Caminho> listaCaminho) {
 		
@@ -165,7 +167,10 @@ public class CalculosMultiverso {
 				}
 			}
 		}
+		primeiroIndiceOrigem(listaCaminho, verticeOrigem );
 	}
+	
+	
 public void calculaCaminhoEE(UniversoVertice verticeOrigem, UniversoVertice verticeDestino,List<Caminho> listaCaminho) {
 		Caminho cam1 = new Caminho();
 		cam1.setletrasDoCaminho(verticeOrigem.getNome());
@@ -231,19 +236,30 @@ public void calculaCaminhoEE(UniversoVertice verticeOrigem, UniversoVertice vert
 			}
 		}
 		
-		
+		primeiroIndiceOrigem(listaCaminho, verticeOrigem );
 	}
 	
 	public void menorCaminho(List<Caminho> listaCaminho) {
 		int menor = 700;
-		int indice = 0;
+		int indice=0,y;
 		for(int i=0; i<listaCaminho.size();i++) {
+			y=i+1;
 			if(listaCaminho.get(i).getTotalEspacoTempo()<=menor) {
-				menor = listaCaminho.get(i).getTotalEspacoTempo();
-				indice = i;
+					menor = listaCaminho.get(i).getTotalEspacoTempo();
+					indice = i;				
 			}			
 		}
 		listaCaminho.get(indice).setMenorCaminho("VIAGEM RÁPIDA");
+		
+	}
+	
+
+	
+	public void primeiroIndiceOrigem(List<Caminho> listaCaminho, UniversoVertice verticeOrigem ) {
+		
+		for(int i=0; i<listaCaminho.size();i++) {
+			listaCaminho.get(i).getLetrasDoCaminho().add(0, verticeOrigem.getNome());
+		}
 	}
 }
 		
