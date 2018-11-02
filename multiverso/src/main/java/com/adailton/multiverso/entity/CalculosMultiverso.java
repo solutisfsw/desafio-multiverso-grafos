@@ -1,20 +1,34 @@
 package com.adailton.multiverso.entity;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.management.Notification;
+
+import org.hibernate.validator.internal.engine.messageinterpolation.parser.EscapedState;
+import org.springframework.util.AlternativeJdkIdGenerator;
 
 public class CalculosMultiverso {
 	private List<Caminho> listaCaminho = new ArrayList<>();
 	
 	public void calculaCaminhoPrincipal(UniversoVertice verticeOrigem, UniversoVertice verticeDestino,List<Caminho> listaCaminho) {
-		if(verticeDestino.getNome().equalsIgnoreCase("b")) {
-			calculaCaminhoBB(verticeOrigem, verticeDestino, listaCaminho);
-		}else if(verticeDestino.getNome().equalsIgnoreCase("e")) {
-			calculaCaminhoEE(verticeOrigem, verticeDestino, listaCaminho);
+		try {
+			if(verticeDestino.getNome().equalsIgnoreCase("b")) {
+				calculaCaminhoBB(verticeOrigem, verticeDestino, listaCaminho);
+			}else if(verticeDestino.getNome().equalsIgnoreCase("e")) {
+				calculaCaminhoEE(verticeOrigem, verticeDestino, listaCaminho);
+			}
+			else {
+				calculaCaminhoNormal(verticeOrigem, verticeDestino, listaCaminho);
+			}
+		} catch (Exception e) {
+			
+			Caminho essecao = new Caminho();
+			essecao.setletrasDoCaminho("Roteiro Invalido");
+			listaCaminho.add(essecao);
 		}
-		else {
-			calculaCaminhoNormal(verticeOrigem, verticeDestino, listaCaminho);
-		}
+		
 	}
 	
 	
@@ -249,7 +263,10 @@ public void calculaCaminhoEE(UniversoVertice verticeOrigem, UniversoVertice vert
 					indice = i;				
 			}			
 		}
-		listaCaminho.get(indice).setMenorCaminho("VIAGEM RÁPIDA");
+		if(!listaCaminho.isEmpty()) {
+			listaCaminho.get(indice).setMenorCaminho("VIAGEM RÁPIDA");
+		}
+		
 		
 	}
 	
