@@ -36,12 +36,10 @@ class Calculo:
             menor_rota=False,
             cont=0
         ):
-        if cont == Multiverso.total:
+
+        if self._validar_menor_rota(menor_rota, distancia) or cont is Multiverso.total:
             return
         cont += 1
-
-        if self._validar_menor_rota(menor_rota, distancia):
-            return
 
         if partida is chegada:
             cont=0
