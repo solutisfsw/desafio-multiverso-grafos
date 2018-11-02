@@ -4,7 +4,7 @@ from util.calculo import Calculo
 from util.lista_dimensao import Multiverso
 
 
-class TestUM(unittest.TestCase):
+class TestCalculo(unittest.TestCase):
 
     """
     Verifica o retorno correto das distâncias ou rotas mesmo em ordens diferentes,
