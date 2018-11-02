@@ -98,3 +98,12 @@ class TestUM(unittest.TestCase):
         except RecursionError:
             raise ValueError("Inpossível chegar ao universo")
         self.assertEqual(calculo.get_valor_menor_rota(), 90)
+
+
+    def test_distancia_B_a_B_paradas_2(self):
+        try:
+            calculo = Calculo()
+            calculo.definir_rotas_universos(partida=Multiverso.b, num_paradas_max=2)
+        except RecursionError:
+            raise ValueError("Inpossível chegar ao universo")
+        self.assertEqual(calculo.get_distancias().__len__(), 1)

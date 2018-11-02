@@ -7,6 +7,7 @@ class Multiverso:
     c = Dimensao()
     d = Dimensao()
     e = Dimensao()
+    total = 5
 
     def ativar_universos(self):
         self.a.set_ativo(True)

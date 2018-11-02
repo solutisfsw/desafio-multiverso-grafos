@@ -33,13 +33,18 @@ class Calculo:
             distancia=0,
             passou=False,
             num_paradas=0,
-            menor_rota=False
+            menor_rota=False,
+            cont=0
         ):
+        if cont == Multiverso.total:
+            return
+        cont += 1
 
         if self._validar_menor_rota(menor_rota, distancia):
             return
 
         if partida is chegada:
+            cont=0
             if (passando is None or passou) \
                     and self._validar_paradas(num_paradas-1, num_paradas_max) \
                     and self._validar_unidades(distancia, num_unidades_max):
@@ -61,7 +66,8 @@ class Calculo:
                 distancia=distancia + rota.get_distancia(),
                 passou=passou or rota.get_dimensao() is passando,
                 num_paradas=num_paradas + 1,
-                menor_rota=menor_rota
+                menor_rota=menor_rota,
+                cont=cont
             )
 
             if partida.get_ativo() is False:
