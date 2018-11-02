@@ -27,7 +27,7 @@ def distancia_C_a_C_paradas_3(calculo):
     try:
         calculo.definir_rotas_universos(partida=Multiverso.c, num_paradas_max=3)
     except RecursionError:
-        print("Inpossível retornar ao universo")
+        print("Inpossível chegar ao universo")
 
 """O número de rotas entre A e C com no máximo 4 paradas?"""
 def distancia_A_a_C_paradas_4(calculo):
@@ -48,14 +48,14 @@ def distancia_B_a_B_menor_rota(calculo):
     try:
         calculo.definir_rotas_universos(partida=Multiverso.b, menor_rota=True)
     except RecursionError:
-        print("Inpossível retornar ao universo")
+        print("Inpossível chegar ao universo")
 
 """O número de diferentes rotas saindo de C e voltando a C com distância máxima de 300 unidades de espaço-tempo?"""
 def distancia_C_a_C_unidades_300(calculo):
     try:
         calculo.definir_rotas_universos(partida=Multiverso.c, num_unidades_max=300)
     except RecursionError:
-        print("Inpossível retornar ao universo")
+        print("Inpossível chegar ao universo")
 
 
 calculo=Calculo()

@@ -15,7 +15,6 @@
             valor pelo método <get_valor_menor_rota>.
 
 """
-
 from util.lista_dimensao import Multiverso
 
 class Calculo:
@@ -52,7 +51,6 @@ class Calculo:
         else:
             chegada = partida
 
-        partida.set_ativo(False)
         for rota in partida.get_rotas():
             self.definir_rotas_universos(
                 partida=rota.get_dimensao(),
