@@ -1,0 +1,7 @@
+com\adailton\multiverso\entity\Aresta.class
+com\adailton\multiverso\controller\MultiversoController.class
+com\adailton\multiverso\MultiversoApplication.class
+com\adailton\multiverso\entity\CalculosMultiverso.class
+com\adailton\multiverso\entity\UniversoVertice.class
+com\adailton\multiverso\entity\ListaDeVertice.class
+com\adailton\multiverso\entity\Caminho.class
