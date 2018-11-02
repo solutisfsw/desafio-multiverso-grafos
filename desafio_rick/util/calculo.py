@@ -3,9 +3,9 @@
    O método <definir_rotas_universos> calcula as rotas nos universos, podendo definir:
    1. O universo de partida e o de chegada
        (Obs: Caso queira representar o retorno ao universo, apenas o universo de partida deve ser informado.);
-   2. Um universo como prioridade de passagem;
-   3. O número máximo de paradas;
-   4. O número máximo de unidades medidas em espaço-tempo
+   2. Um universo como prioridade de passagem <passando>;
+   3. O número máximo de paradas <num_paradas_max>;
+   4. O número máximo de unidades medidas em espaço-tempo <num_unidades_max>.
 
    * Logo após é possível capturar as rotas através do método <get_distancias>
 
