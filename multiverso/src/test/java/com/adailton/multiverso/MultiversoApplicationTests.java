@@ -39,12 +39,14 @@ public class MultiversoApplicationTests {
 	@Test
 	public void verificaDeA_B() {
 
-		List<Caminho> listaCaminho = new ArrayList<>();
-		calculo.calculaCaminhoPrincipal(lista.getA(), lista.getB(), listaCaminho);
-		//assertEquals("a,b",listaCaminho.get(0).getLetrasDoCaminho().get(0).equals(listaCaminho));
+		List<Caminho> listaCaminho = new ArrayList<>();		
+		calculo.calculaCaminhoPrincipal(lista.getA(), lista.getB(), listaCaminho);	
+		calculo.menorCaminho(listaCaminho);
 		
 		assertEquals(50,listaCaminho.get(0).getTotalEspacoTempo());
-		//assertEquals(1,listaCaminho.get(0).getQtdParada());
+		assertEquals(1, listaCaminho.get(0).getQtdParada());	
+		assertEquals("VIAGEM RÁPIDA",listaCaminho.get(0).getMenorCaminho());
+		
 	}
 	
 	@Test
@@ -53,11 +55,32 @@ public class MultiversoApplicationTests {
 		List<Caminho> listaCaminho = new ArrayList<>();
 		calculo.calculaCaminhoPrincipal(lista.getA(), lista.getC(), listaCaminho);
 		calculo.menorCaminho(listaCaminho);
-	
-		assertEquals("VIAGEM RÁPIDA",listaCaminho.get(2).getMenorCaminho());//menor caminho
-		//assertEquals(listaCaminho.get(0).getLetrasDoCaminho().get(0),"e,b,c");//resultado do priemiro indice
-		//assertEquals(listaCaminho.get(2).getLetrasDoCaminho().get(2),"0");
 		
+		assertEquals(140,listaCaminho.get(0).getTotalEspacoTempo());
+		assertEquals(3, listaCaminho.get(0).getQtdParada());
+		
+		assertEquals(90,listaCaminho.get(1).getTotalEspacoTempo());
+		assertEquals(2, listaCaminho.get(1).getQtdParada());			
+		
+	}
+	
+	@Test
+	public void verficaDeA_D() {
+		
+		List<Caminho> listaCaminho = new ArrayList<>();
+		calculo.calculaCaminhoPrincipal(lista.getA(), lista.getD(), listaCaminho);
+		calculo.menorCaminho(listaCaminho);
+		
+		assertEquals(180,listaCaminho.get(0).getTotalEspacoTempo());
+		assertEquals(4, listaCaminho.get(0).getQtdParada());
+		
+		assertEquals(50,listaCaminho.get(2).getTotalEspacoTempo());
+		assertEquals(1, listaCaminho.get(2).getQtdParada());
+		assertEquals("VIAGEM RÁPIDA",listaCaminho.get(2).getMenorCaminho());
+		
+		assertEquals(130,listaCaminho.get(1).getTotalEspacoTempo());
+		assertEquals(3, listaCaminho.get(1).getQtdParada());
+		assertEquals("",listaCaminho.get(1).getMenorCaminho());		
 		
 	}
 
