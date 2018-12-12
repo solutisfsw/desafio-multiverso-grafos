@@ -102,4 +102,5 @@ public class DefaultPathFinderTest {
         assertEquals(4, pathFinder.getTotalPaths());
         assertEquals(90, path.getTotalDistance(),0.01);
     }
+
 }
