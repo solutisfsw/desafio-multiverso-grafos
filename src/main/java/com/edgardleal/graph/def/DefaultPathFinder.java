@@ -30,8 +30,10 @@ public class DefaultPathFinder implements IPathFinder {
     }
 
     /**
-     * This method will inform how many times should pass through a Node. <br/>
-     * The default value is 1 ( One ).
+     * This method will inform how many times should pass through a Node.
+     * <p>
+     *   The default value is 1 ( One ).
+     * </p>
      *
      * @param value a int with desired value
      */
@@ -77,8 +79,8 @@ public class DefaultPathFinder implements IPathFinder {
     /**
      * This method could be used after an {@link #analize(IGraph)} to filter specifics paths.
      *
-     * @param filterFunction an {@link Predicate<IPath>} function to filter results
-     * @return a {@link List<IPath>} with the results
+     * @param filterFunction an {@link Predicate} function to filter results
+     * @return a {@link List} with the results
      */
     @Override
     public List<IPath> filter(Predicate<IPath> filterFunction) {

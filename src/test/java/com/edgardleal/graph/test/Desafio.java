@@ -107,4 +107,16 @@ public class Desafio {
 
         assertEquals(90, path.getTotalDistance(), 0.1);
     }
+
+    /**
+     *  O número de diferentes rotas saindo de C e voltando a C com distância máxima de 300 unidades de espaço-tempo?
+     */
+    @Test
+    public void testNumeroDeDiferentesRotasDe_C_para_C_Maximo300Unidades() throws NodeNotFoundException, PathNotFoundException {
+        DefaultPathFinder pathFinder = new DefaultPathFinder("C", "C");
+        pathFinder.setBackLimit(299); // unnecessary
+        pathFinder.analize(graph);
+
+        assertEquals(3, pathFinder.getTotalPaths());
+    }
 }
