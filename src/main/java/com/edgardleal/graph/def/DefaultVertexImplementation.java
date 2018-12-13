@@ -29,5 +29,10 @@ public class DefaultVertexImplementation implements IVertex {
     public float getDistance() {
         return this.distance;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s - %.2f -> %s", getOrigin(), getDistance(), getTarget());
+    }
 }
 

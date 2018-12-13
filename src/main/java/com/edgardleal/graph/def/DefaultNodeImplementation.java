@@ -29,4 +29,9 @@ public class DefaultNodeImplementation implements INode {
     public List<IVertex> getVertexList() {
         return this.vertexList;
     }
+
+    @Override
+    public String toString() {
+        return this.id;
+    }
 }

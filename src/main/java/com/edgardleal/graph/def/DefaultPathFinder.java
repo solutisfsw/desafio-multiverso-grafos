@@ -5,26 +5,20 @@ import com.edgardleal.graph.*;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class DefaultPathFinder implements IPathFinder {
     private String target;
     private String origin;
     private List<IPath> pathList;
     private boolean isSorted = false;
+    private int backLimit = 1;
 
     public DefaultPathFinder(String target, String origin) {
         this.target = target;
         this.origin = origin;
         this.pathList = new LinkedList<>();
-    }
-
-    @Override
-    public void analize(IGraph graph) throws NodeNotFoundException {
-        this.isSorted = false;
-        final INode nodeOrigin = graph.getNode(this.origin);
-        for (IVertex iVertex : nodeOrigin.getVertexList()) {
-            this.find(iVertex.getTarget(), new DefaultPathImplementation(iVertex), this.target);
-        }
     }
 
     private void sort() {
@@ -33,6 +27,16 @@ public class DefaultPathFinder implements IPathFinder {
         }
         Collections.sort(this.pathList, DefaultPathFinder::pathComparator);
         this.isSorted = true;
+    }
+
+    /**
+     * This method will inform how many times should pass through a Node. <br/>
+     * The default value is 1 ( One ).
+     *
+     * @param value a int with desired value
+     */
+    public void setBackLimit(int value) {
+        this.backLimit = value;
     }
 
     private static int pathComparator(IPath o1, IPath o2) {
@@ -52,7 +56,7 @@ public class DefaultPathFinder implements IPathFinder {
     public IPath getPathThatContainsNode(String id) throws PathNotFoundException {
         this.sort();
         IPath result = null;
-        for(IPath path: this.pathList) {
+        for (IPath path : this.pathList) {
             if (path.hasVisited(id) > 0) {
                 result = path;
                 break;
@@ -70,6 +74,27 @@ public class DefaultPathFinder implements IPathFinder {
         return this.pathList.size();
     }
 
+    @Override
+    public List<IPath> filter(Predicate<IPath> filterFunction) {
+        return this.pathList.stream().filter(filterFunction).collect(Collectors.toList());
+    }
+
+    @Override
+    public void analize(IGraph graph) throws NodeNotFoundException {
+        this.isSorted = false;
+        final INode nodeOrigin = graph.getNode(this.origin);
+        for (IVertex iVertex : nodeOrigin.getVertexList()) {
+            this.find(iVertex.getTarget(), new DefaultPathImplementation(iVertex), this.target);
+        }
+    }
+
+    /**
+     * Walk through the Graph registering each path found.
+     *
+     * @param start   a {@link INode} where to  start the search
+     * @param current a {@link IPath} the current Path
+     * @param target  a  {@link String} with the id for the target Node
+     */
     private void find(INode start, IPath current, String target) {
 
         if (start.getId().equals(target)) {
@@ -82,7 +107,7 @@ public class DefaultPathFinder implements IPathFinder {
         final IPath originalPathCopy = current.clone();
         for (int i = 0; i < start.getVertexList().size(); i++) {
             final IVertex vertex = start.getVertexList().get(i);
-            if (current.hasVisited(vertex.getTarget()) > 1) {
+            if (current.hasVisited(vertex.getTarget()) > this.backLimit) {
                 continue;
             }
 

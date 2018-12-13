@@ -4,10 +4,7 @@ import com.edgardleal.graph.INode;
 import com.edgardleal.graph.IPath;
 import com.edgardleal.graph.IVertex;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class DefaultPathImplementation implements IPath {
     private List<IVertex> vertexList;
@@ -37,12 +34,7 @@ public class DefaultPathImplementation implements IPath {
     }
 
     private void increaseVisitedNumber(String key) {
-        Integer current = this.visiteds.get(key);
-        if (current == null) {
-            this.visiteds.put(key, 1);
-        } else {
-            this.visiteds.put(key, current + 1);
-        }
+        this.visiteds.merge(key, 1, (a, b) -> a + b);
     }
 
     @Override
@@ -85,4 +77,121 @@ public class DefaultPathImplementation implements IPath {
 
         return stringBuilder.toString();
     }
+
+    @Override
+    public int size() {
+        return this.vertexList.size();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return this.vertexList.isEmpty();
+    }
+
+    @Override
+    public boolean contains(Object o) {
+        return o != null && o instanceof IPath && this.hasVisited((INode) o) > 0;
+    }
+
+    @Override
+    public Iterator<IVertex> iterator() {
+        return this.vertexList.iterator();
+    }
+
+    @Override
+    public Object[] toArray() {
+        return this.vertexList.toArray();
+    }
+
+    @Override
+    public <T> T[] toArray(T[] a) {
+        return null;
+    }
+
+    @Override
+    public boolean add(IVertex iVertex) {
+        return this.add(iVertex);
+    }
+
+    @Override
+    public boolean remove(Object o) {
+        return false;
+    }
+
+    @Override
+    public boolean containsAll(Collection<?> c) {
+        return false;
+    }
+
+    @Override
+    public boolean addAll(Collection<? extends IVertex> c) {
+        return false;
+    }
+
+    @Override
+    public boolean addAll(int index, Collection<? extends IVertex> c) {
+        return false;
+    }
+
+    @Override
+    public boolean removeAll(Collection<?> c) {
+        return false;
+    }
+
+    @Override
+    public boolean retainAll(Collection<?> c) {
+        return false;
+    }
+
+    @Override
+    public void clear() {
+        this.vertexList.clear();
+        this.visiteds.clear();
+    }
+
+    @Override
+    public IVertex get(int index) {
+        return this.vertexList.get(index);
+    }
+
+    @Override
+    public IVertex set(int index, IVertex element) {
+        return null;
+    }
+
+    @Override
+    public void add(int index, IVertex element) {
+        throw new RuntimeException("Not implemented");
+    }
+
+    @Override
+    public IVertex remove(int index) {
+        throw new RuntimeException("Not implemented");
+    }
+
+    @Override
+    public int indexOf(Object o) {
+        throw new RuntimeException("Not implemented");
+    }
+
+    @Override
+    public int lastIndexOf(Object o) {
+        throw new RuntimeException("Not implemented");
+    }
+
+    @Override
+    public ListIterator<IVertex> listIterator() {
+        throw new RuntimeException("Not implemented");
+    }
+
+    @Override
+    public ListIterator<IVertex> listIterator(int index) {
+        throw new RuntimeException("Not implemented");
+    }
+
+    @Override
+    public List<IVertex> subList(int fromIndex, int toIndex) {
+        throw new RuntimeException("Not implemented");
+    }
+
 }

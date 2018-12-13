@@ -65,42 +65,4 @@ public class DefaultPathFinderTest {
         assertEquals(1, pathFinder.getTotalPaths());
         assertEquals(70, path.getTotalDistance(),0.01);
     }
-
-    @Test
-    public void testDistanciaEntreAeCPassandoPorB() throws NodeNotFoundException, PathNotFoundException {
-        IGraph graph = new GraphStub1();
-        DefaultPathFinder pathFinder = new DefaultPathFinder("C", "A");
-        pathFinder.analize(graph);
-
-        IPath path = pathFinder.getPathThatContainsNode("B");
-
-        assertEquals(4, pathFinder.getTotalPaths());
-        assertEquals(90, path.getTotalDistance(),0.01);
-    }
-
-    @Test
-    public void testDistanciaEntreAeD() throws NodeNotFoundException, PathNotFoundException {
-        IGraph graph = new GraphStub1();
-        DefaultPathFinder pathFinder = new DefaultPathFinder("D", "A");
-        pathFinder.analize(graph);
-
-        IPath path = pathFinder.getBestPath();
-
-        assertEquals(3, pathFinder.getTotalPaths());
-        assertEquals(50, path.getTotalDistance(),0.01);
-    }
-
-    @Test
-    public void testDistanciaEntreAeCPassandoPorD() throws NodeNotFoundException, PathNotFoundException {
-        IGraph graph = new GraphStub1();
-        DefaultPathFinder pathFinder = new DefaultPathFinder("C", "A");
-        pathFinder.analize(graph);
-
-        final IPath path = pathFinder.getPathThatContainsNode("D");
-        pathFinder.printAll();
-
-        assertEquals(4, pathFinder.getTotalPaths());
-        assertEquals(90, path.getTotalDistance(),0.01);
-    }
-
 }
