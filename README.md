@@ -10,6 +10,14 @@
 
 `./gradlew.bat test`
 
+## Test Coverage
+
+`./gradlew test jacocoTestReport`
+
+## Javadoc
+
+`./gradlew javadoc`
+
 # NOSSO DESAFIO RICK - GRAFOS
 Na ficção científica, a viagem entre diferentes universos, é feita através de portais ou buracos de minhocas que conectam mundos diferentes ou até mesmo dimensões diferentes.
 
