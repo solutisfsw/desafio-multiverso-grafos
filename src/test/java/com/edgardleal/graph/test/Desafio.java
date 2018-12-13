@@ -80,4 +80,18 @@ public class Desafio {
         assertEquals(4, list.size());
 
     }
+
+    /**
+     * A menor rota (em espaço-tempo) entre A e C?
+     */
+    @Test
+    public void testMenorRotaEntre_A_e_C() throws NodeNotFoundException, PathNotFoundException {
+        DefaultPathFinder pathFinder = new DefaultPathFinder("C", "A");
+        pathFinder.analize(graph);
+
+        IPath path = pathFinder.getBestPath();
+
+        assertEquals(90, path.getTotalDistance(), 0.1);
+
+    }
 }
