@@ -1,5 +1,23 @@
 [![N|Solid](http://solutis.com.br/images/logo.png)](http://solutis.com.br)
 
+# Como executar:
+
+## Unix
+
+`./gradlew test`
+
+## Windows
+
+`./gradlew.bat test`
+
+## Test Coverage
+
+`./gradlew test jacocoTestReport`
+
+## Javadoc
+
+`./gradlew javadoc`
+
 # NOSSO DESAFIO RICK - GRAFOS
 Na ficção científica, a viagem entre diferentes universos, é feita através de portais ou buracos de minhocas que conectam mundos diferentes ou até mesmo dimensões diferentes.
 
@@ -17,14 +35,14 @@ Os universos e as rotas correspondem respectivamente aos vértices e arestas pon
 
 Seu código deverá resolver os seguintes problemas:
 
-* A distância de A a C passando por B?
-* A distância entre A e D?
-* A distância de A a C passando por D?
-* O número de rotas saindo de C e voltando a C com no máximo 3 paradas?
-* O número de rotas entre A e C com no máximo 4 paradas?
-* A menor rota (em espaço-tempo) entre A e C?
-* A menor rota (em espaço-tempo) saindo de B e voltando a B?
-* O número de diferentes rotas saindo de C e voltando a C com distância máxima de 300 unidades de espaço-tempo?
+* [X] A distância de A a C passando por B?
+* [X] A distância entre A e D?
+* [X] A distância de A a C passando por D?
+* [X] O número de rotas saindo de C e voltando a C com no máximo 3 paradas?
+* [X] O número de rotas entre A e C com no máximo 4 paradas?
+* [X] A menor rota (em espaço-tempo) entre A e C?
+* [X] A menor rota (em espaço-tempo) saindo de B e voltando a B?
+* [X] O número de diferentes rotas saindo de C e voltando a C com distância máxima de 300 unidades de espaço-tempo?
 
 A forma de entrada e saída dos dados fica a sua escolha.
 
