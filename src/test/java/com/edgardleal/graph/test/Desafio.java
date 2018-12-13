@@ -94,4 +94,17 @@ public class Desafio {
         assertEquals(90, path.getTotalDistance(), 0.1);
 
     }
+
+    /**
+     *  A menor rota (em espaço-tempo) saindo de B e voltando a B?
+     */
+    @Test
+    public void testMenorRotaDe_B_para_B() throws NodeNotFoundException, PathNotFoundException {
+        DefaultPathFinder pathFinder = new DefaultPathFinder("B", "B");
+        pathFinder.analize(graph);
+
+        IPath path = pathFinder.getBestPath();
+
+        assertEquals(90, path.getTotalDistance(), 0.1);
+    }
 }
