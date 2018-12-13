@@ -31,7 +31,7 @@ Seu código deverá resolver os seguintes problemas:
 * [X] A distância entre A e D?
 * [X] A distância de A a C passando por D?
 * [X] O número de rotas saindo de C e voltando a C com no máximo 3 paradas?
-* [ ] O número de rotas entre A e C com no máximo 4 paradas?
+* [X] O número de rotas entre A e C com no máximo 4 paradas?
 * [ ] A menor rota (em espaço-tempo) entre A e C?
 * [ ] A menor rota (em espaço-tempo) saindo de B e voltando a B?
 * [ ] O número de diferentes rotas saindo de C e voltando a C com distância máxima de 300 unidades de espaço-tempo?

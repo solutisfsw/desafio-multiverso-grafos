@@ -74,6 +74,12 @@ public class DefaultPathFinder implements IPathFinder {
         return this.pathList.size();
     }
 
+    /**
+     * This method could be used after an {@link #analize(IGraph)} to filter specifics paths.
+     *
+     * @param filterFunction an {@link Predicate<IPath>} function to filter results
+     * @return a {@link List<IPath>} with the results
+     */
     @Override
     public List<IPath> filter(Predicate<IPath> filterFunction) {
         return this.pathList.stream().filter(filterFunction).collect(Collectors.toList());

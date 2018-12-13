@@ -66,4 +66,18 @@ public class Desafio {
 
         assertEquals(2, list.size());
     }
+
+    /**
+     * O número de rotas entre A e C com no máximo 4 paradas?
+     */
+    @Test
+    public void testNumeroDeRotasDe_A_a_C_ComNoMaximo4Paradas() throws NodeNotFoundException {
+        DefaultPathFinder pathFinder = new DefaultPathFinder("C", "A");
+        pathFinder.analize(graph);
+
+        final List<IPath> list = pathFinder.filter((IPath path) -> path.size() <= 4);
+
+        assertEquals(4, list.size());
+
+    }
 }
