@@ -1,0 +1,4 @@
+- Eu fiz um algoritmo simples no NetBeans pelo java, pensei em usar grafos, 
+mas ia demorar um pouco para aprender teoria e prática, por isso trouxe uma 
+solução mais simples. Ou seja, tem apenas uma classe somando os segmentos das
+flechas.
