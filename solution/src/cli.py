@@ -37,10 +37,11 @@ Examples:
 """
 import sys
 
-from . import graphutils
 from docopt import docopt
 
+from src.graphutils import PathNotFoundError
 from . import __VERSION__
+from . import graphutils
 
 CHALLENGE_GRAPH_STRING = \
     """
@@ -106,25 +107,41 @@ def main():
         max_stops = int(options["--max-stops"]) if options["--max-stops"] else sys.maxsize
         max_distance = int(options["--max-distance"]) if options["--max-distance"] else sys.maxsize
 
-        print(graph.count_routes(src, dest, max_stops, max_distance))
+        try:
+            res = graph.count_routes(src, dest, max_stops, max_distance)
+        except ValueError as err:
+            raise SystemExit(err)
+
+        print(f"{res} rotas.")
+
     elif options["find-path"]:
         graph = graphutils.Graph.from_filepath(options["<graph-file>"])
         src = options["--from"]
         dest = options["--to"]
         mid = options["--through"]
 
-        path, cost = graph.find_shortest_path(src, dest, mid)
+        try:
+            path, cost = graph.find_shortest_path(src, dest, mid)
+        except (PathNotFoundError, ValueError) as err:
+            raise SystemExit(err)
+
         path = [str(vert) for vert in path]
-        print(" -> ".join(path))
-        print(cost)
+        print(f"Rota: {' -> '.join(path)}")
+        print(f"{cost} unidades de espaço tempo.")
+
     elif options["distance"]:
         graph = graphutils.Graph.from_filepath(options["<graph-file>"])
         src = options["--from"]
         dest = options["--to"]
         mid = options["--through"]
 
-        _, cost = graph.find_shortest_path(src, dest, mid)
-        print(cost)
+        try:
+            _, cost = graph.find_shortest_path(src, dest, mid)
+        except (PathNotFoundError, ValueError) as err:
+            raise SystemExit(err)
+
+        print(f"{cost} unidades de espaço-tempo.")
+
     raise SystemExit()
 
 

@@ -1,21 +1,11 @@
-[![N|Solid](http://solutis.com.br/images/logo.png)](http://solutis.com.br)
+# Solução para o Desafio Multiverso
 
-# NOSSO DESAFIO RICK - GRAFOS
-Na ficção científica, a viagem entre diferentes universos, é feita através de portais ou buracos de minhocas que conectam mundos diferentes ou até mesmo dimensões diferentes.
+Aplicação em linha de comando feita em Python 3.7 como solução para o Desafio Multiverso com algumas funcionalidades
+para realizar operações com grafos.
 
-Imagine que você é um físico renomado que descobriu “buracos de minhocas” (rotas) que permitem o deslocamento entre universos. De acordo com sua descoberta, 
-Todas as rotas são unidirecionais, ou seja, uma rota do universo A para o universo B não implica existência de uma rota do universo B para o universo A.
- 
-Mesmo quando existam rotas nos dois sentidos, elas são distintas e não possuem necessariamente a mesma distância (medidas em unidades de espaço-tempo).
-
-O objetivo deste desafio é ajudar futuros viajantes a navegar entre os universos gastando a menor quantidade de espaço-tempo possível. 
-Seu software deverá ser capaz de calcular o custo de deslocamento entre rotas, os números diferentes de rotas entre universos e as rotas mais econômicas.
-
-Os universos e as rotas correspondem respectivamente aos vértices e arestas ponderadas do grafo abaixo:
+A seguir o grafo apresentado no desafio e as perguntas a serem respondidas:
 
 [![N|Solid](https://github.com/solutisfsw/desafio-multiverso-grafos/raw/master/grafo.png)](Grafo)
-
-Seu código deverá resolver os seguintes problemas:
 
 * A distância de A a C passando por B?
 * A distância entre A e D?
@@ -26,22 +16,92 @@ Seu código deverá resolver os seguintes problemas:
 * A menor rota (em espaço-tempo) saindo de B e voltando a B?
 * O número de diferentes rotas saindo de C e voltando a C com distância máxima de 300 unidades de espaço-tempo?
 
-A forma de entrada e saída dos dados fica a sua escolha.
+## Instação e Uso
 
-## REGRAS GERAIS
-Pedimos que você leia atentamente as instruções abaixo e crie uma solução de código usando Java, JavaScript, Ruby, ou Pyhton.
+É necessário o Python versão 3.7.1 ou superior para instalar e executar a aplicação.
+Rode `pip install .` para só instalar ou `pip install -e .` para instalar em modo de desenvolvimento:
 
-- Faça a [cópia](https://help.github.com/articles/fork-a-repo/) do repositório (fork), desenvolva e submeta uma [solicitação de mudança](https://help.github.com/articles/creating-a-pull-request/) (pull request) no branch master.
-- Em caso de dúvidas basta abrir uma issue com sua pergunta (aqui mesmo no github) que nossa equipe irá respondê-lo assim que possível.
-- Você não poderá usar bibliotecas externas ou ferramentas resolver o problema das rotas/grafo.
-- Não será permitido o uso de bancos de dados orientedos a grafos.
-- Avaliaremos uma variedade de aspectos, como design da solução, orientação a objeto, complexidade do código e a existência de testes unitários.
-- Esperamos que você encaminhe um código que acredite ter qualidade, que possa ser executado e evoluído.
-- Caso deseje evoluir a ideia seguindo essa base, fique à vontade: por exemplo, adaptar as entradas e saídas para ser um serviço web, criar uma interface gráfica, etc.
+```
+$ cd solution/
+$ pip install -e .
+```
 
-### BUILD E EXECUÇÃO
-- Envie as instruções para execução do código
-- De preferência, utilize um ferramenta como gradle, maven, npm ou yarn para realizar as tarefas necessárias de build.
+A única dependência externa da aplicação é o `docopt`, biblioteca em Python usada para construir
+aplicação em linha de comando.
+
+Teste a instalação com o seguinte:
+
+```
+$ solveit --help
+solveit - CLI program to execute the solution to the Desafio Multiverso.
+
+Usage:
+  solveit show-solution
+  solveit count-routes --from=VERTEX --to=VERTEX [--max-stops=NUM --max-distance=NUM] <graph-file>
+  solveit find-path --from=VERTEX --to=VERTEX [--through=VERTEX] <graph-file>
+  solveit distance --from=VERTEX --to=VERTEX [--through=VERTEX] <graph-file>
+  solveit -h | --help
+  solveit --version
+
+Options:
+  --from=VERTEX            Source vertex for the query.
+  --to=VERTEX              Destination vertex for the query.
+  --through=VERTEX         Intermediate vertex to go through in the requested path.
+  --max-stops=NUM          Maximum number of stops to make in a route.
+  --max-distance=NUM       Maximum distance the route must have.
+  -h --help                Show help screen.
+  --version                Show version.
+
+Commands:
+  show-solution            Print the solution to the Desafio Multiverso.
+  count-routes             Count how many routes there are between two vertices.
+  find-path                Find the shortest path between two vertices.
+  distance                 Calculate the shortest distance between two vertices.
+
+Examples:
+
+    Print the solution to Desafio Multiverso
+    $ solveit show-solution
+
+    Count routes between A and C in a graph
+    $ solveit count-routes --from=A --to=C ./my-graph-file.txt
+
+    Print shortest path between B and E going through C in a graph
+    $ solveit find-path --from=B --to=E --through=C ./my-graph-file.txt
+```
+
+Rode o seguinte para visualizar as respostas do desafio:
+
+```
+$ solveit show-solution
+```
+
+Utilize os outros comandos para testar outros grafos.
+
+### Formato de entrada dos Grafos
+
+Escreva em um arquivo de texto as arestas do grafo, por exemplo:
+
+```
+A B 50
+A E 70
+A D 50
+B C 40
+C D 40
+C E 20
+D C 40
+D E 80
+E B 30
+```
+
+Cada linha é uma aresta, por exemplo `A B 50` cria uma aresta de A a B com custo 50.
+
+### Testes
+
+Execute os testes de unidade com o seguinte comando:
+
+```
+$ python setup.py test
+```
 
 
-# BOA SORTE!
