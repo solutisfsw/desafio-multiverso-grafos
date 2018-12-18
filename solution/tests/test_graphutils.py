@@ -1,11 +1,12 @@
+import os
 import unittest
 from collections import deque
 
 from src.graphutils import Graph, Vertex, PathNotFoundError
 
-CHALLENGE_GRAPH_FILEPATH = "tests/assets/challenge_graph.txt"
-CYCLIC_GRAPH_FILEPATH = "tests/assets/cyclic_graph.txt"
-SIMPLE_GRAPH_FILEPATH = "tests/assets/simple_graph.txt"
+CHALLENGE_GRAPH_FILEPATH = os.path.join("tests", "assets", "challenge_graph.txt")
+CYCLIC_GRAPH_FILEPATH = os.path.join("tests", "assets", "cyclic_graph.txt")
+SIMPLE_GRAPH_FILEPATH = os.path.join("tests", "assets", "simple_graph.txt")
 
 
 class TestGraphBuildMethods(unittest.TestCase):

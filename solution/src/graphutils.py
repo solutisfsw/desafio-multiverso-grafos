@@ -4,9 +4,10 @@ import re
 import sys
 import uuid
 from collections import deque
-from typing import Hashable, Deque, Tuple, Dict
+from typing import Hashable, Deque, Tuple, Dict, Union
 
 PathAndCost = Tuple[Deque, int]
+VertexOrString = Union["Vertex", str]
 
 
 class PathNotFoundError(Exception):
@@ -47,7 +48,20 @@ class Graph(object):
     def __init__(self):
         self._adjacency_dict = {}
 
-    def add_edge(self, start: Vertex, end: Vertex, weight: int) -> None:
+    def add_edge(self, start: VertexOrString, end: VertexOrString, weight: int) -> None:
+        """
+        Add a directional edge from start to end with certain weight.
+
+        Args:
+            start: Start of the edge.
+            end: End of the edge.
+            weight: Weight of the edge.
+        """
+        if isinstance(start, str):
+            start = Vertex(start)
+        if isinstance(end, str):
+            end = Vertex(end)
+
         if not start in self._adjacency_dict:
             self._adjacency_dict[start] = {}
         if not end in self._adjacency_dict:
@@ -56,6 +70,13 @@ class Graph(object):
         self._adjacency_dict[start][end] = weight
 
     def remove_edge(self, start: Vertex, end: Vertex) -> None:
+        """
+        Remove edge from start to end.
+
+        Args:
+            start: Start of the edge to be removed.
+            end: End of the edge to be removed.
+        """
         if start not in self._adjacency_dict:
             raise KeyError(f"Node {start} not found in the Graph.")
         if end not in self._adjacency_dict[end]:
@@ -64,6 +85,12 @@ class Graph(object):
         del self._adjacency_dict[start][end]
 
     def remove_vertex(self, target: Vertex) -> None:
+        """
+        Remove a vertex from the graph, including all edges from and to it.
+
+        Args:
+            target: Vertex to be removed.
+        """
         if target not in self._adjacency_dict:
             raise KeyError(f"Node {target} not found in the Graph.")
 
@@ -115,6 +142,10 @@ class Graph(object):
         Returns:
             How many routes were found given the constraints.
         """
+        if isinstance(src, str):
+            src = Vertex(src)
+        if isinstance(dest, str):
+            dest = Vertex(dest)
 
         if src == dest:
             dest = self.add_vertex_copy(src)
@@ -123,7 +154,13 @@ class Graph(object):
             temp_dest = False
 
         visited = {vertex: False for vertex in self._adjacency_dict}
-        total = self._do_count_routes(src, dest, 0, max_stops, 0, max_distance, visited)
+        total = self._do_count_routes(src,
+                                      dest,
+                                      0,
+                                      max_stops,
+                                      0,
+                                      max_distance,
+                                      visited)
 
         if temp_dest:
             self.remove_vertex(dest)
@@ -234,7 +271,10 @@ class Graph(object):
 
         return path, cost_sum
 
-    def find_shortest_path(self, src: Vertex, dest: Vertex, mid: Vertex = None) -> PathAndCost:
+    def find_shortest_path(self,
+                           src: VertexOrString,
+                           dest: VertexOrString,
+                           mid: VertexOrString = None) -> PathAndCost:
         """
         Find the shortest path in the graph from src to dest,
         passing through mid if it not None.
@@ -248,6 +288,13 @@ class Graph(object):
             Tuple containing the path from src to dest and the cost
             of the path.
         """
+        if isinstance(src, str):
+            src = Vertex(src)
+        if isinstance(dest, str):
+            dest = Vertex(dest)
+        if isinstance(mid, str):
+            mid = Vertex(mid)
+
         if src not in self._adjacency_dict:
             raise ValueError(f"Can't find source vertex {src} in the graph.")
         if dest not in self._adjacency_dict:
@@ -268,7 +315,8 @@ class Graph(object):
             path_from_src_to_mid, cost1 = self._run_dijkstra(src, mid)
             path_from_mid_to_dest, cost2 = self._run_dijkstra(mid, dest)
 
-            full_path = deque(list(path_from_src_to_mid) + list(path_from_mid_to_dest)[1:])
+            full_path = deque(
+                list(path_from_src_to_mid) + list(path_from_mid_to_dest)[1:])
             full_cost = cost1 + cost2
         else:
             full_path, full_cost = self._run_dijkstra(src, dest)
@@ -283,7 +331,9 @@ class Graph(object):
             self.remove_vertex(dest)
 
         if not full_path:
-            raise PathNotFoundError(f"Couldn't find path from {src} to {'itself' if temp_dest else dest}.")
+            raise PathNotFoundError(
+                f"Couldn't find path from {src} to {'itself' if temp_dest else dest}."
+            )
 
         return full_path, full_cost
 
