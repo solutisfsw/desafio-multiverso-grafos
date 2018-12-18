@@ -1,9 +1,10 @@
-import heapq
 import math
-import re
 import sys
-import uuid
 from collections import deque
+
+import heapq
+import re
+import uuid
 from typing import Hashable, Deque, Tuple, Dict, Union
 
 PathAndCost = Tuple[Deque, int]
@@ -315,6 +316,11 @@ class Graph(object):
             path_from_src_to_mid, cost1 = self._run_dijkstra(src, mid)
             path_from_mid_to_dest, cost2 = self._run_dijkstra(mid, dest)
 
+            if not path_from_mid_to_dest or path_from_mid_to_dest[-1] != dest:
+                raise PathNotFoundError(
+                    f"Couldn't find path from {src} to {dest} going through {mid}."
+                )
+
             full_path = deque(
                 list(path_from_src_to_mid) + list(path_from_mid_to_dest)[1:])
             full_cost = cost1 + cost2
@@ -374,6 +380,8 @@ class Graph(object):
         graph = cls()
 
         for line in graph_data.splitlines():
+
+            line = line.strip()
 
             if not line:
                 continue
