@@ -16,7 +16,7 @@ A seguir o grafo apresentado no desafio e as perguntas a serem respondidas:
 * A menor rota (em espaço-tempo) saindo de B e voltando a B?
 * O número de diferentes rotas saindo de C e voltando a C com distância máxima de 300 unidades de espaço-tempo?
 
-## Instação e Uso
+## Instalação e Uso
 
 É necessário o Python versão 3.7.1 ou superior para instalar e executar a aplicação.
 Rode `pip install .` para só instalar ou `pip install -e .` para instalar em modo de desenvolvimento:
