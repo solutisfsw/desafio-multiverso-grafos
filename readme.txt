@@ -72,8 +72,12 @@ Para execução desta aplicação é necessário ter dois arquivos JSON que est�
 
 
 ==================================================================================================================================================================
-Parâmetros para execução
+Build e Execução
 ==================================================================================================================================================================
+
+- Build: O projeto foi desenvolvido com maven. Basta executar o comando "mvn clean install" na pasta do projeto.
+
+
 Ex.: java -jar [nome_do_jar] [caminho_json_grafo] [caminho_json_requisicao] [caminho_pasta_solucao]
 
 [nome_do_jar]: Nome do jar desta aplicação.

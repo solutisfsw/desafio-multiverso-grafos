@@ -1,6 +1,6 @@
-package br.com.tassio.grafos.multiverso.pojo;
+package br.com.tassio.grafo.pojo;
 
-import br.com.tassio.grafos.multiverso.Start;
+import br.com.tassio.grafo.Start;
 
 public class Deslocamento {
 

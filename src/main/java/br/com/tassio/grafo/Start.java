@@ -1,4 +1,4 @@
-package br.com.tassio.grafos.multiverso;
+package br.com.tassio.grafo;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,11 +16,11 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 
-import br.com.tassio.grafos.multiverso.pojo.Caminho;
-import br.com.tassio.grafos.multiverso.pojo.Deslocamento;
-import br.com.tassio.grafos.multiverso.pojo.RequisicaoCaminho;
-import br.com.tassio.grafos.multiverso.pojo.Solucao;
-import br.com.tassio.grafos.multiverso.pojo.Vertice;
+import br.com.tassio.grafo.pojo.Caminho;
+import br.com.tassio.grafo.pojo.Deslocamento;
+import br.com.tassio.grafo.pojo.RequisicaoCaminho;
+import br.com.tassio.grafo.pojo.Solucao;
+import br.com.tassio.grafo.pojo.Vertice;
 
 public class Start {
 

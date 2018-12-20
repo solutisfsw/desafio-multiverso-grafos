@@ -1,14 +1,14 @@
-package br.com.tassio.grafos.multiverso;
+package br.com.tassio.grafo;
 
 import java.util.Collections;
 
-import br.com.tassio.grafos.multiverso.pojo.Caminho;
-import br.com.tassio.grafos.multiverso.pojo.Deslocamento;
-import br.com.tassio.grafos.multiverso.pojo.RequisicaoCaminho;
-import br.com.tassio.grafos.multiverso.pojo.RequisicaoCaminho.TipoCaminho;
-import br.com.tassio.grafos.multiverso.pojo.Rota;
-import br.com.tassio.grafos.multiverso.pojo.Solucao;
-import br.com.tassio.grafos.multiverso.pojo.Vertice;
+import br.com.tassio.grafo.pojo.Caminho;
+import br.com.tassio.grafo.pojo.Deslocamento;
+import br.com.tassio.grafo.pojo.RequisicaoCaminho;
+import br.com.tassio.grafo.pojo.Rota;
+import br.com.tassio.grafo.pojo.Solucao;
+import br.com.tassio.grafo.pojo.Vertice;
+import br.com.tassio.grafo.pojo.RequisicaoCaminho.TipoCaminho;
 
 public class ProcessadorRequisicao {
 
