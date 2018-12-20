@@ -1,47 +1,89 @@
-[![N|Solid](http://solutis.com.br/images/logo.png)](http://solutis.com.br)
+#"NOSSO DESAFIO RICK - GRAFOS"
+## SOLUÇÃO PROPOSTA 
 
-# NOSSO DESAFIO RICK - GRAFOS
-Na ficção científica, a viagem entre diferentes universos, é feita através de portais ou buracos de minhocas que conectam mundos diferentes ou até mesmo dimensões diferentes.
+**Autor:** Adhemar Fontes (adhemarfontes@gmail.com)
 
-Imagine que você é um físico renomado que descobriu “buracos de minhocas” (rotas) que permitem o deslocamento entre universos. De acordo com sua descoberta, 
-Todas as rotas são unidirecionais, ou seja, uma rota do universo A para o universo B não implica existência de uma rota do universo B para o universo A.
- 
-Mesmo quando existam rotas nos dois sentidos, elas são distintas e não possuem necessariamente a mesma distância (medidas em unidades de espaço-tempo).
+**Linguagem:** Python (3.x)
 
-O objetivo deste desafio é ajudar futuros viajantes a navegar entre os universos gastando a menor quantidade de espaço-tempo possível. 
-Seu software deverá ser capaz de calcular o custo de deslocamento entre rotas, os números diferentes de rotas entre universos e as rotas mais econômicas.
+**Dependências:** numpy e pandas. Caso estas bibliotecas não estejam presentes, basta executar o comando:
 
-Os universos e as rotas correspondem respectivamente aos vértices e arestas ponderadas do grafo abaixo:
+    python -m pip install --user numpy pandas
 
-[![N|Solid](https://github.com/solutisfsw/desafio-multiverso-grafos/raw/master/grafo.png)](Grafo)
+##Arquivos
 
-Seu código deverá resolver os seguintes problemas:
+* **rick.py**: código python da solução, seus métodos estão mais detalhados a seguir.
 
-* A distância de A a C passando por B?
-* A distância entre A e D?
-* A distância de A a C passando por D?
-* O número de rotas saindo de C e voltando a C com no máximo 3 paradas?
-* O número de rotas entre A e C com no máximo 4 paradas?
-* A menor rota (em espaço-tempo) entre A e C?
-* A menor rota (em espaço-tempo) saindo de B e voltando a B?
-* O número de diferentes rotas saindo de C e voltando a C com distância máxima de 300 unidades de espaço-tempo?
+* **main.py**: código python que deverá ser executado para exibir a resposta gerada pela solução para os problemas do desafio. Neste arquivos estão as chamadas referentes a cada um dos problemas.
 
-A forma de entrada e saída dos dados fica a sua escolha.
+* **distancias.csv**: arquivo CSV, que para o perfeito funcionamento o código atualmente implementado, deve estar na mesma pasta que o código python. COntém os dados refletindo a organização e distâncias entre os universos. Formato UNIVERSO_ORIGEM(1 caracter),UNIVERSO_DESTINO(1 caracter),DISTANCIA(número inteiro). Fonte de dados usados por main.py e tests.py. 
 
-## REGRAS GERAIS
-Pedimos que você leia atentamente as instruções abaixo e crie uma solução de código usando Java, JavaScript, Ruby, ou Pyhton.
+* **tests.py**: código pyhton para testes unitários.
 
-- Faça a [cópia](https://help.github.com/articles/fork-a-repo/) do repositório (fork), desenvolva e submeta uma [solicitação de mudança](https://help.github.com/articles/creating-a-pull-request/) (pull request) no branch master.
-- Em caso de dúvidas basta abrir uma issue com sua pergunta (aqui mesmo no github) que nossa equipe irá respondê-lo assim que possível.
-- Você não poderá usar bibliotecas externas ou ferramentas resolver o problema das rotas/grafo.
-- Não será permitido o uso de bancos de dados orientedos a grafos.
-- Avaliaremos uma variedade de aspectos, como design da solução, orientação a objeto, complexidade do código e a existência de testes unitários.
-- Esperamos que você encaminhe um código que acredite ter qualidade, que possa ser executado e evoluído.
-- Caso deseje evoluir a ideia seguindo essa base, fique à vontade: por exemplo, adaptar as entradas e saídas para ser um serviço web, criar uma interface gráfica, etc.
+##API
 
-### BUILD E EXECUÇÃO
-- Envie as instruções para execução do código
-- De preferência, utilize um ferramenta como gradle, maven, npm ou yarn para realizar as tarefas necessárias de build.
+Foram implementados **dois** métodos para responder aos problemas propostos. Devem ser requisitados através do **import** do arquivo **rick.py**.
+
+* **numeroRotas(distancias, o, d, maxParadas, maxDistancia)**
 
 
-# BOA SORTE!
+**Parâmetros**
+
+**distancias**: data frame pandas com a lista de distâncias entre os universos. Formato: O(UNIVERSO_ORIGEM - 1 caracter),D(UNIVERSO_DESTINO - 1 caracter),DT(DISTÂNCIA - número inteiro). Para a implementação, foi utilizado um arquivo CSV para fazer a carga, porém pode-se evoluir para utilização outros meios para obtenção dos dados: input do usuário, webservice, banco de dados.
+
+**o**: universo origem.
+
+**d**: universo destino.
+
+**maxParadas**: máximo de paradas máximas na rota entre a origem e o destino. Para não testar o número de paradas, informar 0 (zero).
+
+**maxDistancia**: distância máxima entre a origem e o destino. Para não testar a distância máxima, informar 0 (zero).
+
+**Retorno**
+
+**Retorno 1**: número de rotas de acordo com os parãmetros informados.
+
+**Retorno 2**: texto com as rotas encontradas, formatadas dentro de colchetes.
+
+* **menorDistancia(distancias, o, d, passandoPor = [])**
+
+**Parâmetros**
+
+**distancias**: data frame pandas com a lista de distâncias entre os universos. Formato: O(UNIVERSO_ORIGEM - 1 caracter),D(UNIVERSO_DESTINO - 1 caracter),DT(DISTÂNCIA - número inteiro). Pode-se utilizar qualquer meio para obtenção dos dados: csv, webservice, banco de dados.
+
+**o**: universo origem.
+
+**d**: universo destino.
+
+**passandoPor**: um array não obrigatório contendo todos os universos que deverão estar presenta na rota buscada.
+
+**Retorno**
+
+**Retorno 1**: número de rotas de acordo com os parãmetros informados.
+
+**Retorno 2**: texto com as rotas encontradas, formatadas dentro de colchetes.
+
+Devido a busca por uma solução mais simples e que possa ser facilmente agregada a uma solução maior, não foi utilizada orientação a objetos, mas sim, programação funcional.
+
+##Código de análise de rotas
+
+No arquivo **rick.py**, estão presentes os métodos **_inicio_ e _buscaRotas_**. 
+
+Estes métodos são responsáveis por localizar as possíveis rotas entre dois universos dados. 
+
+São métodos **genéricos**, pois ao utilizarem **recursividade**, podem resolver os problemas de navegação **independentemente do número de universos e rotas**. 
+
+##Executando o código para solução dos problemas propostos
+
+No prompt de comando executar:
+
+```
+python main.py
+```
+
+##Executando testes unitários
+
+No prompt de comando executar:
+
+```
+python tests.py
+```
