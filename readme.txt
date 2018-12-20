@@ -54,9 +54,12 @@ Para execução desta aplicação é necessário ter dois arquivos JSON que est�
 			                              ATENÇÃO: Os caminhos que não passam pelos vértices obrigatórios são descartados.
 										  
 		- Quantidade máxima de paradas: Determina a quantidade máxima de paradas que um caminho pode ter para que seja aceito como solução.
+										Para não usar esta restrição informar -1.
 		                                ATENÇÃO: Os caminhos que possuem uma quantidade de paradas maior que o permitido são descartados.
-										
+										OBSERVAÇÃO: É considerado como parada apenas vértices que não são origem ou destino do problema e que estão no caminho.
+																
 		- Distância máxima do caminho: Determina a distância máxima que o caminho deve possuir.
+									   Para não usar esta restrição informar -1.
 		                               ATENÇÃO: Os caminhos que possuem uma distância maior que a permitida são descartados.
 									   
 		- Tipo de Caminho: Em alguns problemas propostos pelo desafio é especificado que deseja-se o menor caminho possível ("menor rota em espaço-tempo").
@@ -72,7 +75,7 @@ Para execução desta aplicação é necessário ter dois arquivos JSON que est�
 
 
 ==================================================================================================================================================================
-Build e Execução
+Build, Execução e Solução
 ==================================================================================================================================================================
 
 - Build: O projeto foi desenvolvido com maven. Basta executar o comando "mvn clean install" na pasta do projeto.
@@ -82,6 +85,8 @@ Build e Execução
 			java -jar [nome_do_jar] [caminho_json_grafo] [caminho_json_requisicao] [caminho_pasta_solucao]
 
 			[nome_do_jar]: Nome do jar desta aplicação.
-			[caminho_json_grafo]: Caminho completo do arquivo json que contem a definição formal do grafo, incluindo o nome do arquivo.
-			[caminho_json_requisicao]: Caminho completo do arquivo json que contem as requisições das rotas desejadas, incluindo o nome do arquivo.
+			[caminho_json_grafo]: Caminho completo do arquivo json que contem a definição formal do grafo, incluindo o nome do arquivo. Ex: grafo.json
+			[caminho_json_requisicao]: Caminho completo do arquivo json que contem as requisições das rotas desejadas, incluindo o nome do arquivo. Ex: requisicao.json
 			[caminho_pasta_solucao]: Caminho completo da pasta onde as soluções das requisições devem ser salvas.
+			
+- Solução: As soluções serão armazenadas em arquivos json dentro da pasta [caminho_pasta_solucao] no formato solucao-TIMESTAMP.json

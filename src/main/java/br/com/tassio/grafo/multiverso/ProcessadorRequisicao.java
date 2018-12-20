@@ -21,13 +21,13 @@ public class ProcessadorRequisicao {
 		seguirCaminho(requisicao, null, solucao);
 
 		// -> Se a requisição é para buscar o menor caminho, remover os demais caminhos
-		if (TipoCaminho.MENOR_POSSIVEL.equals(requisicao.getTipoCaminho()) && solucao.getListaCaminho().size() > 1) {
+		if (TipoCaminho.MENOR_POSSIVEL.equals(requisicao.getTipoCaminho()) && solucao.getCaminhos().size() > 1) {
 
 			// -> ordenar do menor para o maior caminho e pegar apenas o primeiro
-			Collections.sort(solucao.getListaCaminho());
-			Caminho menorCaminho = solucao.getListaCaminho().get(0);
-			solucao.getListaCaminho().clear();
-			solucao.getListaCaminho().add(menorCaminho);
+			Collections.sort(solucao.getCaminhos());
+			Caminho menorCaminho = solucao.getCaminhos().get(0);
+			solucao.getCaminhos().clear();
+			solucao.getCaminhos().add(menorCaminho);
 
 		}
 
@@ -76,7 +76,7 @@ public class ProcessadorRequisicao {
 	private void criarDeslocamentoVerificarCriterioParada(Vertice origem, Rota rota, Caminho caminho, RequisicaoCaminho requisicao, Solucao solucao) {
 
 		// Se a requisição aceita qualquer caminho e já foi encontrada uma solução, interromper a pesquisa
-		if (TipoCaminho.QUALQUER.equals(requisicao.getTipoCaminho()) && solucao.getListaCaminho().size() > 0) {
+		if (TipoCaminho.QUALQUER.equals(requisicao.getTipoCaminho()) && solucao.getCaminhos().size() > 0) {
 			return;
 		}
 
@@ -123,11 +123,11 @@ public class ProcessadorRequisicao {
 
 				}
 
-				solucao.getListaCaminho().add(caminho);
+				solucao.getCaminhos().add(caminho);
 				return;
 
 			} else {
-				solucao.getListaCaminho().add(caminho);
+				solucao.getCaminhos().add(caminho);
 				return;
 			}
 

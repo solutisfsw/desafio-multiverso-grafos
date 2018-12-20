@@ -1,12 +1,9 @@
 package br.com.tassio.grafo.multiverso.pojo;
 
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Vertice implements Serializable {
-
-	private static final long serialVersionUID = 1873116080715061595L;
+public class Vertice {
 
 	private String nome = "";
 	private Set<Rota> listaRota = new HashSet<Rota>();

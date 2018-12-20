@@ -6,14 +6,14 @@ import java.util.List;
 public class Solucao {
 
 	private RequisicaoCaminho requisicao;
-	private List<Caminho> listaCaminho = new ArrayList<Caminho>();
+	private List<Caminho> caminhos = new ArrayList<Caminho>();
 
 	public Solucao(RequisicaoCaminho requisicao) {
 		this.requisicao = requisicao;
 	}
 
-	public List<Caminho> getListaCaminho() {
-		return listaCaminho;
+	public List<Caminho> getCaminhos() {
+		return caminhos;
 	}
 
 	public RequisicaoCaminho getRequisicao() {

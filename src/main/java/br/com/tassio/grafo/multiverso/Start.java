@@ -28,7 +28,7 @@ public class Start {
 	// Declaração dos atributos estáticos
 	// ****************************************************************
 
-	// -> Atributo auxiliar para leitura e conversao de JSONs
+	// -> Atributo auxiliar para leitura e conversão de JSONs
 	private static Gson gson = new Gson();
 
 	// -> Definição do tipo contido no arquivo JSON para armazenamento do Grafo
@@ -42,7 +42,7 @@ public class Start {
 	// -> Atributo para guardar o grafo em memória carregado a partir do arquivo json
 	public static HashMap<String, Vertice> grafo = new HashMap<String, Vertice>();
 
-	// -> Atributo para guardar a lista de requisições carragadas a partir do arquivo json
+	// -> Atributo para guardar a lista de requisições carregadas a partir do arquivo json
 	public static List<RequisicaoCaminho> listaRequisicao = new ArrayList<RequisicaoCaminho>();
 
 	// ****************************************************************
@@ -67,7 +67,7 @@ public class Start {
 		}
 
 		// ****************************************************************
-		// Verfificar se os arquivos e pasta informados existem
+		// Verificar se os arquivos e pasta informados existem
 		// ****************************************************************
 
 		// -> Validar o arquivo json do grafo
@@ -78,7 +78,7 @@ public class Start {
 			System.exit(2);
 		}
 
-		// -> Validar o arquivo json das requisicoes
+		// -> Validar o arquivo json das requisições
 		File arquivoJsonRequisicoes = new File(args[1]);
 		if (!arquivoJsonRequisicoes.exists()) {
 			System.out.println("=================================================================\nFalha na execucao!\n=================================================================\n\n");
@@ -86,7 +86,7 @@ public class Start {
 			System.exit(2);
 		}
 
-		// -> Validar se a pasta de solucoes existe
+		// -> Validar se a pasta de soluções existe
 		File pastaDeSolucoes = new File(args[2]);
 		if (!pastaDeSolucoes.exists()) {
 			System.out.println("=================================================================\nFalha na execucao!\n=================================================================\n\n");
@@ -139,7 +139,7 @@ public class Start {
 			Solucao solucao = processador.processar(requisicao);
 
 			// -> Ordenar os caminhos do menor para o maior
-			Collections.sort(solucao.getListaCaminho());
+			Collections.sort(solucao.getCaminhos());
 
 			// -> Armazenar a solução com o conjunto de caminhos possíveis
 			listaSolucoes.add(solucao);
@@ -172,9 +172,9 @@ public class Start {
 
 		System.out.println(requisicao);
 		int idCaminho = 0;
-		Collections.sort(solucao.getListaCaminho());
+		Collections.sort(solucao.getCaminhos());
 
-		for (Caminho caminho : solucao.getListaCaminho()) {
+		for (Caminho caminho : solucao.getCaminhos()) {
 
 			System.out.println("\tCaminho " + ++idCaminho + ": distancia " + caminho.getDistanciaTotal());
 
@@ -182,7 +182,7 @@ public class Start {
 				System.out.println("\t\t" + deslocamento);
 			}
 
-			if (solucao.getListaCaminho().size() > 1) {
+			if (solucao.getCaminhos().size() > 1) {
 				System.out.println("-----------------------------------------------");
 				System.out.println();
 			}

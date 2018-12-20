@@ -1,10 +1,6 @@
 package br.com.tassio.grafo.multiverso.pojo;
 
-import java.io.Serializable;
-
-public class Rota implements Serializable {
-
-	private static final long serialVersionUID = 8502859447060174767L;
+public class Rota {
 
 	private String vertice;
 	private int distancia;
