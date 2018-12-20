@@ -1,4 +1,4 @@
-package br.com.tassio.grafo.pojo;
+package br.com.tassio.grafo.multiverso.pojo;
 
 import java.io.Serializable;
 

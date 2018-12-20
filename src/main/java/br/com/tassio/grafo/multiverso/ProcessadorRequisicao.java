@@ -1,36 +1,34 @@
-package br.com.tassio.grafo;
+package br.com.tassio.grafo.multiverso;
 
 import java.util.Collections;
 
-import br.com.tassio.grafo.pojo.Caminho;
-import br.com.tassio.grafo.pojo.Deslocamento;
-import br.com.tassio.grafo.pojo.RequisicaoCaminho;
-import br.com.tassio.grafo.pojo.Rota;
-import br.com.tassio.grafo.pojo.Solucao;
-import br.com.tassio.grafo.pojo.Vertice;
-import br.com.tassio.grafo.pojo.RequisicaoCaminho.TipoCaminho;
+import br.com.tassio.grafo.multiverso.pojo.Caminho;
+import br.com.tassio.grafo.multiverso.pojo.Deslocamento;
+import br.com.tassio.grafo.multiverso.pojo.RequisicaoCaminho;
+import br.com.tassio.grafo.multiverso.pojo.RequisicaoCaminho.TipoCaminho;
+import br.com.tassio.grafo.multiverso.pojo.Rota;
+import br.com.tassio.grafo.multiverso.pojo.Solucao;
+import br.com.tassio.grafo.multiverso.pojo.Vertice;
 
 public class ProcessadorRequisicao {
 
 	public Solucao processar(RequisicaoCaminho requisicao) {
 
+		// -> Criar nova solução
 		Solucao solucao = new Solucao(requisicao);
 
+		// -> Iniciar chamada recursiva
 		seguirCaminho(requisicao, null, solucao);
 
-		switch (requisicao.getTipoCaminho()) {
+		// -> Se a requisição é para buscar o menor caminho, remover os demais caminhos
+		if (TipoCaminho.MENOR_POSSIVEL.equals(requisicao.getTipoCaminho()) && solucao.getListaCaminho().size() > 1) {
 
-		case MENOR_POSSIVEL:
-			if (solucao.getListaCaminho().size() > 0) {
-				Collections.sort(solucao.getListaCaminho());
-				Caminho menorCaminho = solucao.getListaCaminho().get(0);
-				solucao.getListaCaminho().clear();
-				solucao.getListaCaminho().add(menorCaminho);
-			}
-			break;
+			// -> ordenar do menor para o maior caminho e pegar apenas o primeiro
+			Collections.sort(solucao.getListaCaminho());
+			Caminho menorCaminho = solucao.getListaCaminho().get(0);
+			solucao.getListaCaminho().clear();
+			solucao.getListaCaminho().add(menorCaminho);
 
-		default:
-			break;
 		}
 
 		return solucao;
@@ -81,7 +79,7 @@ public class ProcessadorRequisicao {
 		if (TipoCaminho.QUALQUER.equals(requisicao.getTipoCaminho()) && solucao.getListaCaminho().size() > 0) {
 			return;
 		}
-		
+
 		Vertice destino = Start.grafo.get(rota.getNomeVertice());
 
 		caminho.adicionarDeslocamento(new Deslocamento(origem.getNome(), destino.getNome(), rota.getDistancia()));

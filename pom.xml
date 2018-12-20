@@ -6,7 +6,7 @@
 	<artifactId>desafio-multiverso-grafos</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0</version>
-	<name>Desafio Multiverso Grafos</name>
+	<name>Desafio Grafos Multiverso</name>
 
 	<properties>
 		<project.build.sourceEncoding>utf-8</project.build.sourceEncoding>

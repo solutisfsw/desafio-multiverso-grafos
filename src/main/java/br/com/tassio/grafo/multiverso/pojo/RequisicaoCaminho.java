@@ -1,9 +1,9 @@
-package br.com.tassio.grafo.pojo;
+package br.com.tassio.grafo.multiverso.pojo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.tassio.grafo.Start;
+import br.com.tassio.grafo.multiverso.Start;
 
 public class RequisicaoCaminho {
 

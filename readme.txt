@@ -77,10 +77,11 @@ Build e Execução
 
 - Build: O projeto foi desenvolvido com maven. Basta executar o comando "mvn clean install" na pasta do projeto.
 
+- Execução:
 
-Ex.: java -jar [nome_do_jar] [caminho_json_grafo] [caminho_json_requisicao] [caminho_pasta_solucao]
+			java -jar [nome_do_jar] [caminho_json_grafo] [caminho_json_requisicao] [caminho_pasta_solucao]
 
-[nome_do_jar]: Nome do jar desta aplicação.
-[caminho_json_grafo]: Caminho completo do arquivo json que contem a definição formal do grafo, incluindo o nome do arquivo.
-[caminho_json_requisicao]: Caminho completo do arquivo json que contem as requisições das rotas desejadas, incluindo o nome do arquivo.
-[caminho_pasta_solucao]: Caminho completo da pasta onde as soluções das requisições devem ser salvas.
+			[nome_do_jar]: Nome do jar desta aplicação.
+			[caminho_json_grafo]: Caminho completo do arquivo json que contem a definição formal do grafo, incluindo o nome do arquivo.
+			[caminho_json_requisicao]: Caminho completo do arquivo json que contem as requisições das rotas desejadas, incluindo o nome do arquivo.
+			[caminho_pasta_solucao]: Caminho completo da pasta onde as soluções das requisições devem ser salvas.
