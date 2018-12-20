@@ -1,0 +1,128 @@
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+
+<h1>DESAFIO RICK - GRAFOS</h1>
+<h2>Documentação</h2>
+<div>
+	<i>Descrição geral</i>: este algoritmo varre o nó inicial, verificando se já chegou no destino
+	ou, caso contrário, se o nó seguinte tem mais links, armazenando-os em um vetor para ser
+	visitado posteriormente. O código faz isso até não restar nós a serem visitados, gerando
+	todos os caminhos possíveis até o nó alvo. A respostas às questões dos desafios são realizadas
+	posteriormente a geração das rotas.
+</div>
+<hr>
+<h3>Como Executar </h3>
+<div>
+	<ul>
+	<li>Abra o arquivo index.html, no navegador;</li>
+	<li>As respostas irão aparecer na tela inicial.</li>
+	</ul>
+</div>
+<hr>
+
+<h3>Classes</h3>
+
+<div>
+	<b> Graph.js</b>
+</div>
+<div>
+	Essa classe representa o Grafo. Nodes é um conjunto de nós do tipo Node. 
+	<pre>
+	function Graph(nodes){
+		this.nodes = nodes;
+		this.countlinks; 	
+	}
+	</pre>
+	<div>Métodos:</div>
+	<div>
+		<i>findAllWays</i><span>: Retorna um caminho entre um nó e outro nó</span><br>
+		<i>getRouteToYPassingX</i><span>:Retorna rotas de um nó a outro passando por um nó x (Way[], Node, Node)</span><br>
+		<i>getCountRouteToYMaxStop</i><span>: Retorna quantidade de rotas de um nó a outro com até x paradas (Way[], int, Node)</span><br>
+		<i>getCountRouteToYMaxDistance</i><span>: Retorna quantidade de rotas de um nó a outro com uma distânica até x (Way[], int, Node)</span><br>
+		<i>getLessRoute</i><span>: Obtém as menores rotas de um nó a outro (Way[])</span><br>
+		<i>printRoutes</i><span>: Imprime rotas</span><br>
+		<i>getAllRoutes</i><span>: Obtém todas as rotas de um nó a outro (Node, Node)</span><br>
+	</div>
+	
+</div>
+<br>
+
+<div>
+	<b>Node.js</b>
+</div>
+<div>
+	Essa classe representa um nó do grafo. Links é um conjunto de links entre os nós, na direção
+	deste nó para o próximo nó. Label é a label do nó, ex: A, B, E.
+
+	<pre>
+	function Node(label){
+		this.links = [];
+		this.label = label;
+	}
+	</pre>
+</div>
+
+<div>Métodos:</div>
+<div>
+	<i>getLinks</i><span>: obtem a lista de links (Array)</span><br>
+	<i>addLink</i><span>: adiciona um link a um nó (Void)</span><br>
+	<i>getLabel</i><span>: retorna o label do nó (String)</span><br>
+</div>
+
+<br>
+
+<div>
+	<b>Link.js</b>
+</div>
+<div>
+	Essa classe representa um nó do grafo. Links é um conjunto de links entre os nós, na direção
+	deste nó para o próximo nó. Label é a lable do nó, ex: A, B, E.
+
+	<pre>
+	function Node(label){
+		this.links = [];
+		this.label = label;
+	}
+	</pre>
+</div>
+<br>
+<div>
+	<b>Way.js</b>
+</div>
+<div>
+	Essa classe representa um caminho dentre nós, com todos os nós visitados. Links é um array de nós
+	<pre>
+	function Way(){
+		this.links = [];
+	}
+	</pre>
+	<div>Métodos:</div>
+		<div>
+			<i>calcWeigth</i><span>: Calcula o peso de um caminho</span><br>
+		</div>
+</div>
+
+<br>
+<div>
+	<b>App.js</b>
+</div>
+<div>
+	Essa classe é responsável por iniciar a aplicação e chamar os métodos de resposta ao desafio. Gaph é a referência 
+	do grafo.
+	<pre>
+	App = function(){
+		this.graph = null;
+	}
+	</pre>
+	<div>Métodos:</div>
+	<div>
+		<i>startApp</i><span>: Inicia a aplicação criando os nós, os links e o grafo</span><br>
+	</div>
+</div>
+<br>
+<br>
+</body>
+<html>
