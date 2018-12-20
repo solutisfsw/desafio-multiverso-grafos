@@ -32,16 +32,14 @@ no_rest[2] =[2,B]
 */
 
 Start = function(no, no_alvo){
-	no_rest = [];
-	ways = [];
-
-	r = 0;
-	r = ways.length;
+	var no_rest = [];
+	var ways = [];
+	var r = ways.length;
 
 	//é o proprio no
-	if(no == no_alvo)
-		console.log("você já está no nó");
-	else{
+	//if(no == no_alvo)
+	//console.log("você já está no nó");
+	//else{
 		//para todos os links do no inicial
 		for(n=0; n < no.getLinks().length; n++){
 			//coloca o par = no, um dos links 
@@ -54,12 +52,12 @@ Start = function(no, no_alvo){
 			r++;
 		}
 
-	}
+	//}
 	
 	//controla a deleção lógica
 	//qtd_nulls = 0;
 
-	//break_count = 0;
+	break_count = 0;
 
 
 	/* agora verifica todos os nós a serem visitados */
@@ -73,12 +71,12 @@ Start = function(no, no_alvo){
 		   continue;
 		
 		
-		/*break_count++
+		break_count++
 		//impede loop infito
 		if(break_count >= 100){
 			console.log("break 1");
 			break;
-		}*/
+		}
 		
 		//pega o index e o nó
 		index_arr = no_rest[l][0];
@@ -94,18 +92,7 @@ Start = function(no, no_alvo){
 			}
 			
 			
-			/** VERIFICA CICLOS ***/
-			var len = ways[index_arr].length;
 			
-			if(ways[index_arr][len-1] ==  ways[index_arr][len-3]){
-				//buscando index
-				for(var p = 0; p < no_rest.length; p++)
-					if(no_rest[p][0] == index_arr)	
-						no_rest[p] = null;
-			}
-					
-				
-				
 			//adiciona o no ao caminho
 			if(m == 0){
 				
@@ -134,6 +121,30 @@ Start = function(no, no_alvo){
 	 
 		}
 		
+		/** VERIFICA CICLOS ***/	
+			var remove = false;
+			
+			for(var i = 0; i<ways.length; i++)
+				for(var j = 0; j<ways[i].length; j++)
+					for(var k = j+1; k<ways[i].length; k++){
+						if(ways[i][j] == ways[i][k]){
+							for(var p = 0; p < no_rest.length; p++)
+								if ((no_rest[p] != null) && (no_rest[p][0]==i)){
+									no_rest[p] = null;
+									remove = true;
+								}
+									
+						}
+						
+				}
+				
+			if(remove){
+				l = -1;
+				continue;
+			}
+				
+
+				
 		//se ocorreu alguma adicao no no_rest, resete o loop
 		if(l == no_rest.length-1){
 			l = -1;	
@@ -141,6 +152,23 @@ Start = function(no, no_alvo){
 		
 	}
 
-	return ways;
+	//Calcular os pesos
+	weights = [];
+	for(var i = 0; i < ways.length; i++){
+		
+		if(ways[i][ways[i].length -1] == no_alvo){
+			weights[i] = 0;
+			for(var j = 1; j < ways[i].length; j++)
+				for(var l = 0; l < ways[i][j-1].getLinks().length; l++)
+					if(ways[i][j-1].getLinks()[l].getNode() == ways[i][j])
+						weights[i]+= ways[i][j-1].getLinks()[l].getWeight();		
+		}else{
+			weights[i] = -1;
+		}
+
+	}
+	
+	
+	return [ways, weights];
 
 }
