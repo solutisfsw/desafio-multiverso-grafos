@@ -1,0 +1,70 @@
+[
+	{
+		"origem": "A",
+		"destino": "C",
+		"listaVerticeObrigatorio": [
+			"B"
+		],
+		"quantidadeMaximaParadaPorCaminho": -1,
+		"distanciaMaximaPorCaminho": -1,
+		"tipoCaminho": "QUALQUER"
+	},
+	{
+		"origem": "A",
+		"destino": "D",
+		"listaVerticeObrigatorio": [],
+		"quantidadeMaximaParadaPorCaminho": -1,
+		"distanciaMaximaPorCaminho": -1,
+		"tipoCaminho": "QUALQUER"
+	},
+	{
+		"origem": "A",
+		"destino": "C",
+		"listaVerticeObrigatorio": [
+			"D"
+		],
+		"quantidadeMaximaParadaPorCaminho": -1,
+		"distanciaMaximaPorCaminho": -1,
+		"tipoCaminho": "QUALQUER"
+	},
+	{
+		"origem": "C",
+		"destino": "C",
+		"listaVerticeObrigatorio": [],
+		"quantidadeMaximaParadaPorCaminho": 3,
+		"distanciaMaximaPorCaminho": -1,
+		"tipoCaminho": "TODOS"
+	},
+	{
+		"origem": "A",
+		"destino": "C",
+		"listaVerticeObrigatorio": [],
+		"quantidadeMaximaParadaPorCaminho": 4,
+		"distanciaMaximaPorCaminho": -1,
+		"tipoCaminho": "TODOS"
+	},
+	{
+		"origem": "A",
+		"destino": "C",
+		"listaVerticeObrigatorio": [],
+		"quantidadeMaximaParadaPorCaminho": -1,
+		"distanciaMaximaPorCaminho": -1,
+		"tipoCaminho": "MENOR_POSSIVEL"
+	},
+	{
+		"origem": "B",
+		"destino": "B",
+		"listaVerticeObrigatorio": [],
+		"quantidadeMaximaParadaPorCaminho": -1,
+		"distanciaMaximaPorCaminho": -1,
+		"tipoCaminho": "MENOR_POSSIVEL"
+	},
+	{
+		"origem": "C",
+		"destino": "C",
+		"listaVerticeObrigatorio": [],
+		"quantidadeMaximaParadaPorCaminho": -1,
+		"distanciaMaximaPorCaminho": 300,
+		"tipoCaminho": "TODOS"
+	}
+]

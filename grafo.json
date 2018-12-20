@@ -1,0 +1,63 @@
+{
+	"A": {
+		"nome": "A",
+		"listaRota": [
+			{
+				"vertice": "E",
+				"distancia": 70
+			},		
+			{
+				"vertice": "B",
+				"distancia": 50
+			},
+			{
+				"vertice": "D",
+				"distancia": 50
+			}
+		]
+	},
+	"B": {
+		"nome": "B",
+		"listaRota": [
+			{
+				"vertice": "C",
+				"distancia": 40
+			}
+		]
+	},
+	"C": {
+		"nome": "C",
+		"listaRota": [
+			{
+				"vertice": "E",
+				"distancia": 20
+			},
+			{
+				"vertice": "D",
+				"distancia": 40
+			}
+		]
+	},
+	"D": {
+		"nome": "D",
+		"listaRota": [
+			{
+				"vertice": "C",
+				"distancia": 40
+			},
+			{
+				"vertice": "E",
+				"distancia": 80
+			}
+		]
+	},
+	"E": {
+		"nome": "E",
+		"listaRota": [
+			{
+				"vertice": "B",
+				"distancia": 30
+			}
+		]
+	}
+}
