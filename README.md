@@ -1,4 +1,4 @@
-#"NOSSO DESAFIO RICK - GRAFOS"
+# "NOSSO DESAFIO RICK - GRAFOS"
 ## SOLUÇÃO PROPOSTA 
 
 **Autor:** Adhemar Fontes (adhemarfontes@gmail.com)
@@ -9,7 +9,7 @@
 
     python -m pip install --user numpy pandas
 
-##Arquivos
+## Arquivos
 
 * **rick.py**: código python da solução, seus métodos estão mais detalhados a seguir.
 
@@ -19,7 +19,7 @@
 
 * **tests.py**: código pyhton para testes unitários.
 
-##API
+## API
 
 Foram implementados **dois** métodos para responder aos problemas propostos. Devem ser requisitados através do **import** do arquivo **rick.py**.
 
@@ -64,7 +64,7 @@ Foram implementados **dois** métodos para responder aos problemas propostos. De
 
 Devido a busca por uma solução mais simples e que possa ser facilmente agregada a uma solução maior, não foi utilizada orientação a objetos, mas sim, programação funcional.
 
-##Código de análise de rotas
+## Código de análise de rotas
 
 No arquivo **rick.py**, estão presentes os métodos **_inicio_ e _buscaRotas_**. 
 
@@ -72,7 +72,7 @@ Estes métodos são responsáveis por localizar as possíveis rotas entre dois u
 
 São métodos **genéricos**, pois ao utilizarem **recursividade**, podem resolver os problemas de navegação **independentemente do número de universos e rotas**. 
 
-##Executando o código para solução dos problemas propostos
+## Executando o código para solução dos problemas propostos
 
 No prompt de comando executar:
 
@@ -80,7 +80,7 @@ No prompt de comando executar:
 python main.py
 ```
 
-##Executando testes unitários
+## Executando testes unitários
 
 No prompt de comando executar:
 
