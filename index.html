@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta charset="UTF-8">
+
+<!-- usado para teste -->
+<script src="Tests/LogCenter.js"></script>
+<!-- Modelos -->
+<script src="Model/Node.js"></script>
+<script src="Model/Link.js"></script>
+<script src="Model/Graph.js"></script>
+</head>
+<body>
+
+<h1>DESAFIO RICK - GRAFOS</h1>
+<div><b>Resolução do desafio Rick, proposto pela Solutis</b></div>
+<div><b>Autor</b>: Luis Araujo (luisaraujo.ifba (at) gmail.com</div>
+<div>Ver <a href="documentation.html">documentação</a> da aplicação</div>
+<div>Ver <a href="Tests/index.html">testes</a> das classes</div>
+<img src = "grafo.png">
+<div>
+<br>
+<div><b> Q1 - A distância de A a C passando por B?</b></div>
+<div id="q1"> </div>
+
+<div><b> Q2 - A distância entre A e D?</b></div>
+<div id="q2"> </div>
+
+<div><b> Q3 -A distância de A a C passando por D?</b></div>
+<div id="q3"> </div>
+
+<div><b> Q4 - O número de rotas saindo de C e voltando a C com no máximo 3 paradas?</b></div>
+<div id="q4"> </div>
+
+<div><b> Q5 - O número de rotas entre A e C com no máximo 4 paradas?</b></div>
+<div id="q5"> </div>
+
+<div><b> Q6 - A menor rota (em espaço-tempo) entre A e C?</b></div>
+<div id="q6"> </div>
+
+
+<div><b> Q7 - A menor rota (em espaço-tempo) saindo de B e voltando a B?</b></div>
+<div id="q7"> </div>
+
+
+<div><b> Q8 - O número de diferentes rotas saindo de C e voltando a C com distância máxima de 300 unidades de espaço-tempo?</b></div>
+<div id="q8"> </div>
+
+
+</div>
+
+<!-- aplicação -->
+<script src="App.js"></script> 
+<script>
+	app = new App();
+	//incial a aplicação
+	app.startApp();
+	//chama as respostas do desafio
+	app.playAnswer();
+</script>
+</body>
+<html>
