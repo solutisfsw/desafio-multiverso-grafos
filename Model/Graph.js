@@ -1,5 +1,18 @@
+/**
+@class Graph
+@desc Representa um grafo
+**/
 function Graph(nodes){
+	/**@member {Array}**/
 	this.nodes = nodes;
+}
+/**
+@name getNodes
+@desc Função retorna todos os nós do grafo
+@return Nodes[]
+*/
+Graph.prototype.getNodes = function(){
+	return this.nodes;
 }
 
 /**
@@ -8,6 +21,7 @@ function Graph(nodes){
 @param {array} way - todas as rotas possíveis
 @param {node} y - nó alvo
 @param {node} x - nó que deve ser visidado
+@return Array[][]
 */
 Graph.prototype.getRouteToYPassingX = function(way, y, x){
 	way_temp = [[],[]];
@@ -34,13 +48,14 @@ Graph.prototype.getRouteToYPassingX = function(way, y, x){
 @param {array} way_temp - todas as rotas possíveis
 @param {node} y - nó alvo
 @param {node} max - limite de paradas
+@return int
 */
 Graph.prototype.getCountRouteToYMaxStop = function(way_temp, y, max){
 	qtd = 0;
 	
 	for(var i = 0; i < way_temp[0].length; i++){
 		
-		if(way_temp[0][i][ way_temp[0][i].length-1 ] != c)
+		if(way_temp[0][i][ way_temp[0][i].length-1 ] != y)
 		  continue;
 	  
 	  
@@ -58,14 +73,15 @@ Graph.prototype.getCountRouteToYMaxStop = function(way_temp, y, max){
 @param {array} way_temp - todas as rotas possíveis
 @param {node} y - nó alvo
 @param {node} max - limite de paradas
+@return int
 */
 Graph.prototype.getCountRouteToYMaxDistance= function(way_temp, max, y){
 	qtd = 0;
-	for(var i = 0; i < way[0].length; i++){
-		if(way[0][i][way[0][i].length-1] != y)
+	for(var i = 0; i < way_temp[0].length; i++){
+		if(way_temp[0][i][way_temp[0][i].length-1] != y)
 		  continue;
 	  
-		if(way[1][i] <= max)
+		if(way_temp[1][i] <= max)
 			qtd++;
 		
 	}
@@ -76,7 +92,8 @@ Graph.prototype.getCountRouteToYMaxDistance= function(way_temp, max, y){
 @name  getLessRoute
 @desc Função pega as menores rotas
 @param {array} way_temp - todas as rotas possíveis
-@param {node} y - nó alvo
+@param {node} x - nó alvo
+@return Array[]
 */
 Graph.prototype.getLessRoute = function(way_temp, x){
 	
@@ -108,10 +125,14 @@ Graph.prototype.getLessRoute = function(way_temp, x){
 @name printRoutes
 @desc Função printa rotas
 @param {array} way_temp - rotas
+@return String
 */
 Graph.prototype.printRoutes = function(way_temp){
 	str="";
 	for(var j = 0; j < way_temp[0].length; j++){
+		if(way_temp[1][j] == -1)
+			continue;
+		
 		str += "caminho "+ j + " (";
 			
 			for(var l = 0; l < way_temp[0][j].length-1; l++){
@@ -131,6 +152,7 @@ Graph.prototype.printRoutes = function(way_temp){
 @name printLessRoute
 @desc Função printa rotas
 @param {array} less_route- rotas
+@return String
 */
 Graph.prototype.printLessRoute = function(less_route){
 	str = "";
@@ -152,48 +174,39 @@ Graph.prototype.printLessRoute = function(less_route){
 @desc Método retorna todas as rotas de um no a outro
 @param {Node} no - nó inicial
 @param {array} less_route- rotas
+@return Array[][]
 */
 Graph.prototype.getAllRoutes = function(no, no_alvo){
 	var no_rest = [];
 	var ways = [];
 	var r = ways.length;
 	
-	//para todos os links do no inicial
 	for(n=0; n < no.getLinks().length; n++){
-		//coloca o par = no, um dos links 
 		ways[r] = [no, no.getLinks()[n].getNode() ];
 		
-		//cado exista mais de um link, cadatra como um nó a ser visitado
 		if(no.getLinks()[n].getNode() != no_alvo)	
 			no_rest.push( [n, no.getLinks()[n].getNode() ] );
 		
 		r++;
 	}
 
-	/* agora verifica todos os nós a serem visitados */
-	//para todos os rests
+
 	for(var l = 0; l < no_rest.length; l++){
 		
-		//caso deletado (deleção lógica)
 		if(no_rest[l] == null)
 		   continue;
 		
-		//pega o index e o nó
 		index_arr = no_rest[l][0];
 		no_atual = no_rest[l][1];
 		
-		//pega todos os links do no_atual
 		for(var m = 0; m < no_atual.getLinks().length; m++){
 		
-			//chegou?
 			if(no_atual == no_alvo){
 				no_rest[l] = null;
 				continue;
 			}
 			
-			
-			
-			//adiciona o no ao caminho
+		
 			if(m == 0){
 				
 				ways[index_arr][ways[index_arr].length-1];
@@ -201,10 +214,8 @@ Graph.prototype.getAllRoutes = function(no, no_alvo){
 
 				no_rest[l][1] = no_atual.getLinks()[m].getNode();
 				 
-			
-			//caso não seja o primeiro link	
 			}else if(m > 0){
-				//copia o caminho
+				
 				temp = [];
 				for(var p = 0; p < ways[index_arr].length-1; p++)
 					temp[p] = ways[ index_arr ][p];
@@ -221,7 +232,7 @@ Graph.prototype.getAllRoutes = function(no, no_alvo){
 	 
 		}
 		
-		/** VERIFICA CICLOS ***/	
+		// VERIFICA CICLOS 	
 		var remove = false;
 		
 		for(var i = 0; i<ways.length; i++)
@@ -238,21 +249,15 @@ Graph.prototype.getAllRoutes = function(no, no_alvo){
 					
 			}
 			
-		if(remove){
+		if((remove) || (l == no_rest.length-1)){
 			l = -1;
 			continue;
 		}
 				
-
-				
-		//se ocorreu alguma adicao no no_rest, resete o loop
-		if(l == no_rest.length-1){
-			l = -1;	
-		}
+		
 		
 	}
 
-	//Calcular os pesos
 	weights = [];
 	for(var i = 0; i < ways.length; i++){
 		

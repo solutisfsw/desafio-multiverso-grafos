@@ -1,4 +1,9 @@
+/**
+@class App
+@desc Responsável por iniciar a aplicação
+**/
 App = function(){
+	/**@member {Graph}**/
 	this.graph = null;
 };
 
@@ -54,21 +59,7 @@ App.prototype.playAnswer = function(){
 	
 	//A distância entre A e D?
 	way = this.graph.getAllRoutes(a, d);
-	str = "";
-	for(var i = 0; i < way[0].length; i++){
-		
-		if(way[0][i][ way[0][i].length-1 ] != d)
-		  continue;
-		
-		str += "caminho "+ i + " (";
-		for(var j = 0; j < way[0][i].length-1; j++){
-			str += way[0][i][j].getLabel()+", ";				
-		}
-		str += way[0][i][way[0][i].length-1].getLabel();
-		str += ") possui a distancia de: "+ way[1][i] + "<br>";
-		
-	}
-	
+	str = this.graph.printRoutes(way);
 	
 	document.getElementById("q2").innerHTML =  str ;
 	
@@ -119,10 +110,3 @@ App.prototype.playAnswer = function(){
 	
 	
 }
-
-
-
-app = new App();
-app.startApp();
-//chama as respostas do desafio
-app.playAnswer();

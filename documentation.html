@@ -26,18 +26,18 @@
 <h3>Classes</h3>
 
 <div>
-	<b> Graph.js</b>
+	<b><a href="Model/Graph.js">Graph.js</a></b>
 </div>
 <div>
 	Essa classe representa o Grafo. Nodes é um conjunto de nós do tipo Node. 
 	<pre>
 	function Graph(nodes){
 		this.nodes = nodes;
-		this.countlinks; 	
 	}
 	</pre>
 	<div>Métodos:</div>
 	<div>
+		<i>getNodes</i><span>: Retorna todos os nós do grafo</span><br>
 		<i>findAllWays</i><span>: Retorna um caminho entre um nó e outro nó</span><br>
 		<i>getRouteToYPassingX</i><span>:Retorna rotas de um nó a outro passando por um nó x (Way[], Node, Node)</span><br>
 		<i>getCountRouteToYMaxStop</i><span>: Retorna quantidade de rotas de um nó a outro com até x paradas (Way[], int, Node)</span><br>
@@ -51,7 +51,7 @@
 <br>
 
 <div>
-	<b>Node.js</b>
+	<b><a href="Model/Node.js">Node.js</a></b>
 </div>
 <div>
 	Essa classe representa um nó do grafo. Links é um conjunto de links entre os nós, na direção
@@ -75,39 +75,23 @@
 <br>
 
 <div>
-	<b>Link.js</b>
+	<b><a href="Model/Link.js">Link.js</a></b>
 </div>
 <div>
-	Essa classe representa um nó do grafo. Links é um conjunto de links entre os nós, na direção
-	deste nó para o próximo nó. Label é a lable do nó, ex: A, B, E.
+	Essa classe representa uma aresta nó do grafo. End é o nó que a aresta liga e weight o peso da aresta.
 
 	<pre>
-	function Node(label){
-		this.links = [];
-		this.label = label;
+	function Link (end, weight){
+		this.end = end;
+		this.weight = weight;
 	}
 	</pre>
 </div>
 <br>
-<div>
-	<b>Way.js</b>
-</div>
-<div>
-	Essa classe representa um caminho dentre nós, com todos os nós visitados. Links é um array de nós
-	<pre>
-	function Way(){
-		this.links = [];
-	}
-	</pre>
-	<div>Métodos:</div>
-		<div>
-			<i>calcWeigth</i><span>: Calcula o peso de um caminho</span><br>
-		</div>
-</div>
 
 <br>
 <div>
-	<b>App.js</b>
+	<b><a href="Model/App.js">App.js</a></b>
 </div>
 <div>
 	Essa classe é responsável por iniciar a aplicação e chamar os métodos de resposta ao desafio. Gaph é a referência 
