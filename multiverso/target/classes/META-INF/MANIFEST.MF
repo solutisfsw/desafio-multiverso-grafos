@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: multiverso
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: adail
+Implementation-Vendor-Id: com.adailton
+Build-Jdk: 1.8.0_171
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/multiverso
+Created-By: Maven Integration for Eclipse
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	
+	
+    <title>Multiverso</title>
+    <style >
+   		body{background-image:url("https://conteudo.imguol.com.br/c/noticias/2015/02/09/ilustracao-de-wormhole-buraco-de-minhoca-um-atalho-no-universo-que-permitiria-viajar-no-tempo-espaco-1423508533414_615x470.jpg");
+     				background-repeat: no-repeat;
+     				background-size:100%;
+     				margin: 1%;padding: 1%; 
+     				color:#fff!important ;   				
+     		   		}
+     	#superior{background-color:rgb(28,28,28,0.7); padding:  1%;margin-bottom: 1%}
+     	img{width: 280px; height: 280px;}
+   		h1{text-align: center; color:#fff!important;border: green;}
+   		td,tr{text-align: center;}
+   		select{background:#2E2E2E;color:#fff!important ;}
+   		table{background-color:rgb(28,28,28,0.7);}
+   		tbody tr:hover{background-color:#2E2E2E}
+   		
+   		
+   		
+    </style>
+  </head>
+  <body>
+	  <div id="superior">
+	  	<h1>Multiverso</h1>
+	  	<h2>Seja Bem vindo viajante do espaço</h2>	 		  	
+	    	<p>A Multiverso Corporation tem a tecnologia mais avança de transporte, para transforma sua viagem a mais rápida e confortável por diversos universos.</p>
+	    	<p>Veja a baixo o mapa dos univerveos.</p>
+	    <!-- <canvas id="grafo" width="500" height="500"></canvas> -->
+  		<img src="https://image.ibb.co/meS8iL/grafo.png" >
+		<form  method="post"> 		   	
+		   		<p>Informe-nos abaixo qual seu universo de partida e qual seu destino e lhe informaremos as possibilidade dos roteiros  mais eficientes e eficaz disponíveis para sua viagem.<p>
+		   		<label>Universo de Partida: </label>
+				 <select name="origem">
+					  <option value="a">A</option>
+					  <option value="b">B</option>
+					  <option value="c">C</option>
+					  <option value="d">D</option>
+					  <option value="e">E</option>
+				</select>
+				
+				<label>Destino: </label>
+				<select name="destino">
+					  <option value="b">B</option>
+					  <option value="c">C</option>
+					  <option value="d">D</option>
+					  <option value="e">E</option>
+				</select>
+				<button style="background:#2E2E2E; color:#fff!important;" title="Listar Caminhos"><i class="material-icons">list_alt</i></button>				 			
+		</form>	
+		</div>		
+		<table class="table table-dark" style="background-color:rgb(28,28,28,0.7);">
+					  <thead>
+					    <tr>
+					    	<th scope="col">Portais que irá percorrer</th>
+						      <th scope="col">Quantidade de Paradas</th>
+						      <th scope="col"><i title="Total de Espaço Tempo" class="material-icons">timer</i></th>	
+						      <th scope="col"><i title="Veja a viagem mais rápida" class="material-icons">directions_run</i></th>				
+					    </tr>
+					  </thead>
+					  
+					  <tbody>
+					    <tr th:each="caminho : ${listaCaminhos}">
+					    	<td th:text="${caminho.getLetrasDoCaminho()}"></td>
+							<td th:text="${caminho.getQtdParada()}"></td>							
+							<td th:text="${caminho.getTotalEspacoTempo()}"></td>
+							<td th:text="${caminho.getMenorCaminho()}"></td>
+						</tr>
+					  </tbody>
+		</table>
+	
+	    <!-- JavaScript (Opcional) -->
+	    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+	    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+	   
+  </body>
+</html>
