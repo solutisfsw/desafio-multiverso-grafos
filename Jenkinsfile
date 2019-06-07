@@ -3,7 +3,7 @@ node {
         git 'https://github.com/Adailton90/CrudPessoa'
     }
     script {
-        System.setProperty("Dorg.jenkinsci.plugins.durabletask.BourneShellScript.HEARTBEAT_CHECK_INTERVAL", "86400");
+        System.setProperty("org.jenkinsci.plugins.durabletask.BourneShellScript.HEARTBEAT_CHECK_INTERVAL", "86400");
      }
     stage('build'){
         //Get maven home path
