@@ -1,6 +1,6 @@
 node {
     stage('SCM Checkout'){        
-        git 'https://github.com/Adailton90/CrudPessoa'
+        git 'https://github.com/Adailton90/desafio-multiverso-grafos'
     }
     script {
         System.setProperty("org.jenkinsci.plugins.durabletask.BourneShellScript.HEARTBEAT_CHECK_INTERVAL", "86400");
